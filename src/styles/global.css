@@ -123,8 +123,16 @@ h3 {
 
 .header-cta {
   justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   padding-bottom: 0.15rem;
   border-bottom: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.header-cta-compact {
+  display: none;
 }
 
 .mobile-menu {
@@ -1179,7 +1187,8 @@ h3 {
 
 @media (max-width: 1000px) {
   .site-header {
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: minmax(120px, 1fr) auto auto;
+    column-gap: clamp(1rem, 3vw, 2rem);
   }
 
   .desktop-nav {
@@ -1189,7 +1198,7 @@ h3 {
   .mobile-menu {
     position: relative;
     display: block;
-    justify-self: center;
+    justify-self: end;
   }
 
   .mobile-menu summary {
@@ -1199,6 +1208,7 @@ h3 {
     letter-spacing: 0.07em;
     list-style: none;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .mobile-menu summary::-webkit-details-marker {
@@ -1277,6 +1287,7 @@ h3 {
 
   .site-header {
     min-height: 70px;
+    column-gap: 0.9rem;
     padding-inline: 1rem;
   }
 
@@ -1480,6 +1491,21 @@ h3 {
   .note-callout {
     margin-inline: 0;
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    grid-template-columns: minmax(94px, 1fr) auto auto;
+    column-gap: 0.65rem;
+  }
+
+  .header-cta-wide {
+    display: none;
+  }
+
+  .header-cta-compact {
+    display: inline;
   }
 }
 
