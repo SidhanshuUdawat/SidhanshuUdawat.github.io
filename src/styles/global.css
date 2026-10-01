@@ -878,17 +878,6 @@ h3 {
   text-transform: uppercase;
 }
 
-.note-visual {
-  position: relative;
-  width: min(1120px, 100%);
-  min-height: 270px;
-  margin: 0 0 clamp(4rem, 8vw, 7rem);
-  padding: clamp(2rem, 4vw, 4rem);
-  border: 1px solid var(--ink);
-  background: #dfe4ff;
-  overflow: hidden;
-}
-
 .note-body {
   width: min(760px, 100%);
   margin: 0 auto;
@@ -985,159 +974,50 @@ h3 {
   text-transform: uppercase;
 }
 
-.flow-visual {
-  display: grid;
-  grid-template-columns: repeat(9, auto);
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+.note-illustration {
+  width: min(560px, 100%);
+  margin: clamp(3rem, 7vw, 5rem) 0;
 }
 
-.flow-node,
-.loop-node,
-.leverage-node,
-.hat-card {
-  display: grid;
-  place-items: center;
-  min-height: 86px;
-  padding: 1rem;
-  border: 1px solid var(--ink);
-  background: var(--paper-bright);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-align: center;
-  text-transform: uppercase;
+.note-illustration-panel-2 {
+  margin-left: auto;
 }
 
-.flow-node,
-.loop-node,
-.hat-card {
-  animation: notePulse 6s infinite;
-  animation-delay: calc(var(--step) * 1.05s);
+.note-illustration-panel-3 {
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.flow-arrow {
-  color: var(--blue);
-  font-size: 1.6rem;
-}
-
-.build-loop {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  align-content: center;
-}
-
-.loop-caption,
-.hats-caption {
-  grid-column: 1 / -1;
-  margin-top: 1rem;
-  color: var(--blue-dark);
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 2vw, 1.7rem);
-  text-align: center;
-}
-
-.path-visual {
-  display: grid;
-  align-content: center;
-  gap: 1.5rem;
-}
-
-.path {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.path-long {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.path-short {
-  grid-template-columns: repeat(3, 1fr);
-  width: 60%;
-}
-
-.path span {
+.note-illustration-frame {
   position: relative;
-  padding: 1rem;
+  aspect-ratio: 2 / 3;
   border: 1px solid var(--ink);
   background: var(--paper-bright);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-align: center;
-  text-transform: uppercase;
+  overflow: hidden;
 }
 
-.path span:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -0.75rem;
-  z-index: 2;
-  color: var(--blue);
+.note-illustration img {
+  width: 300%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
 }
 
-.path-short span {
-  animation: notePulse 4s infinite;
+.note-illustration-panel-2 img {
+  transform: translateX(-33.333%);
 }
 
-.leverage-visual {
-  display: grid;
-  grid-template-columns: 1fr auto 1.5fr auto 1fr;
-  align-items: center;
-  gap: clamp(0.75rem, 2vw, 2rem);
+.note-illustration-panel-3 img {
+  transform: translateX(-66.666%);
 }
 
-.leverage-node {
-  min-height: 110px;
-}
-
-.leverage-team {
-  background: var(--blue);
-  color: white;
-  animation: teamBreathe 3s ease-in-out infinite;
-}
-
-.leverage-signal {
-  color: var(--blue-dark);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.hats-visual {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  align-content: center;
-}
-
-@keyframes notePulse {
-  0%,
-  15%,
-  100% {
-    background: var(--paper-bright);
-    color: var(--ink);
-    transform: translateY(0);
-  }
-  7% {
-    background: var(--blue);
-    color: white;
-    transform: translateY(-7px);
-  }
-}
-
-@keyframes teamBreathe {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(47, 85, 255, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 0 16px rgba(47, 85, 255, 0);
-  }
+.note-illustration figcaption {
+  max-width: 46ch;
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.45;
 }
 
 .archive-page,
@@ -1595,45 +1475,6 @@ h3 {
 
   .notes-archive-link {
     flex-direction: column;
-  }
-
-  .note-visual {
-    min-height: auto;
-    padding: 1.5rem;
-  }
-
-  .flow-visual,
-  .build-loop,
-  .leverage-visual,
-  .hats-visual {
-    grid-template-columns: 1fr;
-  }
-
-  .flow-arrow {
-    transform: rotate(90deg);
-    text-align: center;
-  }
-
-  .loop-caption,
-  .hats-caption {
-    grid-column: auto;
-  }
-
-  .path-long,
-  .path-short {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  .path span:not(:last-child)::after {
-    right: 50%;
-    bottom: -1.15rem;
-    transform: rotate(90deg);
-  }
-
-  .leverage-signal {
-    text-align: center;
-    transform: rotate(90deg);
   }
 
   .note-callout {

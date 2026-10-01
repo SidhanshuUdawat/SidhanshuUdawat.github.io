@@ -1,0 +1,24 @@
+---
+interface Props {
+  src: string;
+  panel: 1 | 2 | 3;
+  alt: string;
+  caption?: string;
+}
+
+const { src, panel, alt, caption } = Astro.props;
+---
+
+<figure class={`note-illustration note-illustration-panel-${panel}`}>
+  <div class="note-illustration-frame">
+    <img
+      src={src}
+      width="1774"
+      height="887"
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

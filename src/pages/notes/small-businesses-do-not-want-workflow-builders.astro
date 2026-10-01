@@ -1,25 +1,12 @@
 ---
 import NoteLayout from '../../layouts/NoteLayout.astro';
+import NoteIllustration from '../../components/NoteIllustration.astro';
 import { notes } from '../../data/notes';
 
 const note = notes[2];
 ---
 
 <NoteLayout {...note}>
-  <div
-    slot="visual"
-    class="note-visual path-visual"
-    role="img"
-    aria-label="A comparison between assembling a workflow from a blank canvas and configuring a ready workflow"
-  >
-    <div class="path path-long">
-      <span>Blank canvas</span><span>Connect</span><span>Map</span><span>Debug</span><span>Maintain</span>
-    </div>
-    <div class="path path-short">
-      <span>Ready workflow</span><span>Configure</span><span>Run</span>
-    </div>
-  </div>
-
   <p class="note-opening">
     Workflow automation is still too technical for many of the businesses it claims to help.
   </p>
@@ -59,6 +46,13 @@ const note = notes[2];
     Nobody wakes up excited to map <code>field_17</code> to <code>invoice_total</code>. If they do,
     please introduce us. We probably have work for them.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/prebuilt-workflows-triptych.jpg"
+    panel={1}
+    alt="A small business owner tangled in a maze of cables, connectors and empty modules"
+    caption="A blank canvas can quietly turn the customer into the workflow engineer."
+  />
 
   <h2>Customers usually ask for an outcome</h2>
 
@@ -103,6 +97,13 @@ const note = notes[2];
     need to fit your organisation?” The second question is narrower, but far more useful.
   </p>
 
+  <NoteIllustration
+    src="/images/notes/prebuilt-workflows-triptych.jpg"
+    panel={2}
+    alt="A complete invoice-processing machine with two simple controls"
+    caption="Start with the working process, then expose the decisions that genuinely vary."
+  />
+
   <h2>Failures are part of the workflow</h2>
 
   <p>
@@ -123,6 +124,13 @@ const note = notes[2];
     lessons once and improve them for every customer, rather than asking each customer to discover
     the same failure modes independently.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/prebuilt-workflows-triptych.jpg"
+    panel={3}
+    alt="Routine invoices moving along a conveyor while one exception is routed to a person"
+    caption="Routine work keeps moving. The unusual case reaches a person with context."
+  />
 
   <h2>Invoice processing is a useful starting point</h2>
 

@@ -1,25 +1,12 @@
 ---
 import NoteLayout from '../../layouts/NoteLayout.astro';
+import NoteIllustration from '../../components/NoteIllustration.astro';
 import { notes } from '../../data/notes';
 
 const note = notes[1];
 ---
 
 <NoteLayout {...note}>
-  <div
-    slot="visual"
-    class="note-visual build-loop"
-    role="img"
-    aria-label="A repeated product development loop from specification through agent, review, test and shipping"
-  >
-    <span class="loop-node" style="--step: 0">Specify</span>
-    <span class="loop-node" style="--step: 1">Direct</span>
-    <span class="loop-node" style="--step: 2">Review</span>
-    <span class="loop-node" style="--step: 3">Test</span>
-    <span class="loop-node" style="--step: 4">Ship</span>
-    <span class="loop-caption">Then look at what broke and go around again.</span>
-  </div>
-
   <p class="note-opening">
     I am building an AI-native SaaS product as a solo founder. I do not type every line of code
     myself, and I no longer think that is a particularly useful measure of the work.
@@ -56,6 +43,13 @@ const note = notes[1];
     Writing this down is not administrative overhead. It is product design. The agent forces me
     to make decisions that a human team would also need, only much sooner and with fewer meetings.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/one-person-product-triptych.jpg"
+    panel={1}
+    alt="A founder writing a detailed plan while a many-armed machine waits for direction"
+    caption="The agent brings speed. The founder still has to provide direction."
+  />
 
   <h2>Give agents bounded work</h2>
 
@@ -95,6 +89,13 @@ const note = notes[1];
     founder needs the discipline to reject work quickly. More output is not the same as more
     progress.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/one-person-product-triptych.jpg"
+    panel={2}
+    alt="A founder inspecting generated product blocks with a magnifying glass while a bug hides nearby"
+    caption="Generated work still has to survive review, testing and judgment."
+  />
 
   <aside class="note-callout">
     <strong>The operating loop</strong>
@@ -148,6 +149,13 @@ const note = notes[1];
     excuse. If building is faster, we have to spend more time asking whether we are building the
     right thing.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/one-person-product-triptych.jpg"
+    panel={3}
+    alt="A founder guiding a compact finished product as it launches toward customers"
+    caption="Shipping is faster. Finding the right destination remains the difficult part."
+  />
 
   <h2>The role has changed</h2>
 

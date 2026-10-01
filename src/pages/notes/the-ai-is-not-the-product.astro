@@ -1,28 +1,12 @@
 ---
 import NoteLayout from '../../layouts/NoteLayout.astro';
+import NoteIllustration from '../../components/NoteIllustration.astro';
 import { notes } from '../../data/notes';
 
 const note = notes[0];
 ---
 
 <NoteLayout {...note}>
-  <div
-    slot="visual"
-    class="note-visual flow-visual"
-    role="img"
-    aria-label="An invoice moves through extraction, validation, review and completion"
-  >
-    <span class="flow-node" style="--step: 0">Invoice</span>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <span class="flow-node" style="--step: 1">AI extracts</span>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <span class="flow-node" style="--step: 2">Rules validate</span>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <span class="flow-node" style="--step: 3">Human reviews</span>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <span class="flow-node" style="--step: 4">Done</span>
-  </div>
-
   <p class="note-opening">
     “It’s just an AI wrapper” is usually meant as an insult. I think it gives the model far too
     much credit.
@@ -57,6 +41,13 @@ const note = notes[0];
     It can confidently read a number while being confidently wrong about what that number means.
     Confidence, sadly, is not a refund policy.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/ai-is-not-the-product-triptych.jpg"
+    panel={1}
+    alt="A hand holding a messy invoice as useful facts lift from the page"
+    caption="The model turns an untidy document into a useful first interpretation."
+  />
 
   <h2>The product carries the responsibility</h2>
 
@@ -96,6 +87,13 @@ const note = notes[0];
     interpretation, which require certainty, and how do they work together?”
   </p>
 
+  <NoteIllustration
+    src="/images/notes/ai-is-not-the-product-triptych.jpg"
+    panel={2}
+    alt="Extracted invoice facts passing through a mechanical validation sieve"
+    caption="Rules catch what should not depend on a model’s interpretation."
+  />
+
   <aside class="note-callout">
     <strong>A practical rule</strong>
     <p>Use AI for ambiguity. Use code for guarantees. Use people for consequential judgment.</p>
@@ -118,6 +116,13 @@ const note = notes[0];
     The objective is not “zero humans.” The objective is that humans spend their time on the
     cases where their context matters.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/ai-is-not-the-product-triptych.jpg"
+    panel={3}
+    alt="A person calmly reviewing one flagged invoice while routine work continues"
+    caption="Automation should make the exception obvious, then give the right person enough context."
+  />
 
   <h2>The model should be replaceable</h2>
 

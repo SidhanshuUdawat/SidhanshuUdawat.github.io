@@ -1,24 +1,12 @@
 ---
 import NoteLayout from '../../layouts/NoteLayout.astro';
+import NoteIllustration from '../../components/NoteIllustration.astro';
 import { notes } from '../../data/notes';
 
 const note = notes[4];
 ---
 
 <NoteLayout {...note}>
-  <div
-    slot="visual"
-    class="note-visual hats-visual"
-    role="img"
-    aria-label="A founder moves between product, engineering, customers and operations"
-  >
-    <span class="hat-card" style="--step: 0">Product</span>
-    <span class="hat-card" style="--step: 1">Engineering</span>
-    <span class="hat-card" style="--step: 2">Customers</span>
-    <span class="hat-card" style="--step: 3">Operations</span>
-    <span class="hats-caption">One calendar. Several hats. No hat rack.</span>
-  </div>
-
   <p class="note-opening">
     Before founding NeevFlow, I led multiple engineering teams across countries. Now I am building
     one product directly, moving between customer conversations, product decisions, architecture,
@@ -35,6 +23,13 @@ const note = notes[4];
     Founding is not starting from zero. It is discovering which parts of your experience still work
     when there is nobody else to absorb the gaps.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/founder-journey-triptych.jpg"
+    panel={1}
+    alt="A founder moving between product, engineering, customer and operations conversations"
+    caption="The roles change several times a day. The responsibility does not."
+  />
 
   <h2>Leadership taught me to work through ambiguity</h2>
 
@@ -94,6 +89,13 @@ const note = notes[4];
     Completely Missed.”
   </p>
 
+  <NoteIllustration
+    src="/images/notes/founder-journey-triptych.jpg"
+    panel={2}
+    alt="A customer conversation feeding a product sketch that becomes working software"
+    caption="A short feedback loop is useful only when it starts with the right observation."
+  />
+
   <aside class="note-callout">
     <strong>The useful transfer</strong>
     <p>Leadership gives me systems thinking. Building directly gives me immediate feedback. The product needs both.</p>
@@ -149,6 +151,13 @@ const note = notes[4];
     clarity in a system of people and technology, understanding where failures would travel and
     improving the conditions for useful work.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/founder-journey-triptych.jpg"
+    panel={3}
+    alt="A new product growing from layered foundations of previous teams, systems and experience"
+    caption="A new company can still grow from years of accumulated experience."
+  />
 
   <p>
     Today I apply that thinking more directly. I can move from strategy to code and back again,

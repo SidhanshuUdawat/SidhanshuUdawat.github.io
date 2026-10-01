@@ -1,24 +1,12 @@
 ---
 import NoteLayout from '../../layouts/NoteLayout.astro';
+import NoteIllustration from '../../components/NoteIllustration.astro';
 import { notes } from '../../data/notes';
 
 const note = notes[3];
 ---
 
 <NoteLayout {...note}>
-  <div
-    slot="visual"
-    class="note-visual leverage-visual"
-    role="img"
-    aria-label="A manager creates clarity that enables a team to produce outcomes"
-  >
-    <span class="leverage-node">Manager</span>
-    <span class="leverage-signal" aria-hidden="true">clarity →</span>
-    <span class="leverage-node leverage-team">Team</span>
-    <span class="leverage-signal" aria-hidden="true">delivery →</span>
-    <span class="leverage-node leverage-outcome">Outcome</span>
-  </div>
-
   <p class="note-opening">
     Many new engineering managers struggle in their first 90 days, not because they are weak
     engineers, but because they continue doing the job that made them successful before.
@@ -72,6 +60,13 @@ const note = notes[3];
     clarify the decision that must be made, identify who should own it and make sure the right
     people have the context they need.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/engineering-manager-triptych.jpg"
+    panel={1}
+    alt="A new manager carrying every tool while the engineering team waits behind them"
+    caption="Being able to solve every problem does not mean you should own every problem."
+  />
 
   <h2>The second trap is avoiding discomfort</h2>
 
@@ -145,6 +140,13 @@ const note = notes[3];
     exists, that meeting may be ready for a dignified retirement.
   </p>
 
+  <NoteIllustration
+    src="/images/notes/engineering-manager-triptych.jpg"
+    panel={2}
+    alt="A manager lighting a beacon while the team works with clear direction"
+    caption="The manager’s leverage begins with clarity, not control."
+  />
+
   <h2>Days 61 to 90: strengthen the team</h2>
 
   <p>
@@ -158,6 +160,13 @@ const note = notes[3];
     every decision still routes through you, the team may be busy but the management system is not
     scaling.
   </p>
+
+  <NoteIllustration
+    src="/images/notes/engineering-manager-triptych.jpg"
+    panel={3}
+    alt="An engineering team moving a large product forward together while the manager supports from the side"
+    caption="A strong team can move the outcome without the manager pulling from the front."
+  />
 
   <h2>AI can assist, but it cannot manage</h2>
 
