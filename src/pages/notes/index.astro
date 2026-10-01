@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { notes } from '../../data/notes';
+---
+
+<BaseLayout
+  title="Notes | Sidhanshu Udawat"
+  description="Notes by Sidhanshu Udawat on products, practical AI, engineering leadership and building NeevFlow."
+  canonicalPath="/notes/"
+>
+  <main id="content" class="notes-page">
+    <header class="notes-header">
+      <p class="section-kicker">Notes</p>
+      <h1>Things I have learned by building them.</h1>
+      <p>
+        Longer thoughts on practical AI, product decisions, engineering leadership and the
+        occasionally untidy work of building a company.
+      </p>
+    </header>
+
+    <div class="notes-list">
+      {notes.map((note, index) => (
+        <a class="note-list-item" href={`/notes/${note.slug}/`}>
+          <span class="note-list-number">0{index + 1}</span>
+          <span class="note-list-copy">
+            <span class="writing-type">{note.category}</span>
+            <strong>{note.title}</strong>
+            <span>{note.description}</span>
+          </span>
+          <span class="note-list-meta">
+            <span>{note.readingTime}</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <div class="notes-archive-link">
+      <p>Looking for the older technical posts?</p>
+      <a class="text-link" href="/pensieve/">Browse the Pensieve archive →</a>
+    </div>
+  </main>
+</BaseLayout>

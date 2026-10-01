@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  readingTime: string;
+  published: string;
+  publishedIso: string;
+  slug: string;
+  linkedin?: string;
+}
+
+const {
+  title,
+  description,
+  category,
+  readingTime,
+  published,
+  publishedIso,
+  slug,
+  linkedin,
+} = Astro.props;
+
+const articleData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: publishedIso,
+  dateModified: publishedIso,
+  mainEntityOfPage: `https://sidhanshuudawat.com/notes/${slug}/`,
+  author: {
+    '@type': 'Person',
+    name: 'Sidhanshu Udawat',
+    url: 'https://sidhanshuudawat.com',
+  },
+};
+---
+
+<BaseLayout
+  title={`${title} | Sidhanshu Udawat`}
+  description={description}
+  canonicalPath={`/notes/${slug}/`}
+  article
+  publishedTime={publishedIso}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleData)} />
+  <main id="content" class="note-page">
+    <a class="article-back" href="/notes/">← All notes</a>
+
+    <article>
+      <header class="note-header">
+        <p class="section-kicker">{category}</p>
+        <h1>{title}</h1>
+        <p class="note-deck">{description}</p>
+        <div class="note-meta">
+          <span>By Sidhanshu Udawat</span>
+          <time datetime={publishedIso}>{published}</time>
+          <span>{readingTime}</span>
+        </div>
+      </header>
+
+      <slot name="visual" />
+
+      <div class="note-body">
+        <slot />
+      </div>
+
+      <footer class="note-footer">
+        <p>Thanks for reading. I write about building products, engineering teams and NeevFlow.</p>
+        <div>
+          {linkedin && (
+            <a href={linkedin} target="_blank" rel="noreferrer">
+              View the original LinkedIn post ↗
+            </a>
+          )}
+          <a href="/notes/">More notes →</a>
+        </div>
+      </footer>
+    </article>
+  </main>
+</BaseLayout>

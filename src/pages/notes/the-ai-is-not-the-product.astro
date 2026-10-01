@@ -1,0 +1,154 @@
+---
+import NoteLayout from '../../layouts/NoteLayout.astro';
+import { notes } from '../../data/notes';
+
+const note = notes[0];
+---
+
+<NoteLayout {...note}>
+  <div
+    slot="visual"
+    class="note-visual flow-visual"
+    role="img"
+    aria-label="An invoice moves through extraction, validation, review and completion"
+  >
+    <span class="flow-node" style="--step: 0">Invoice</span>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <span class="flow-node" style="--step: 1">AI extracts</span>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <span class="flow-node" style="--step: 2">Rules validate</span>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <span class="flow-node" style="--step: 3">Human reviews</span>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <span class="flow-node" style="--step: 4">Done</span>
+  </div>
+
+  <p class="note-opening">
+    “It’s just an AI wrapper” is usually meant as an insult. I think it gives the model far too
+    much credit.
+  </p>
+
+  <p>
+    While building NeevFlow, I learned that getting an AI model to read an invoice is the easy
+    demonstration. You upload a document, a few seconds pass, and structured fields appear on
+    the screen. It looks impressive. It is also only the beginning.
+  </p>
+
+  <p>
+    A business does not need a convincing demonstration. It needs the invoice to be processed
+    correctly. Those are very different standards.
+  </p>
+
+  <h2>The model performs a task</h2>
+
+  <p>
+    AI is good at turning messy input into a useful first interpretation. In invoice processing,
+    that can mean identifying the supplier, invoice number, dates, currency, totals and line
+    items. This removes tedious manual entry and gives the workflow somewhere useful to begin.
+  </p>
+
+  <p>
+    But extraction does not know everything the business knows. It does not automatically know
+    whether the supplier is expected, whether the amount violates a policy, whether the same
+    invoice arrived yesterday, or who is allowed to approve it.
+  </p>
+
+  <p>
+    It can confidently read a number while being confidently wrong about what that number means.
+    Confidence, sadly, is not a refund policy.
+  </p>
+
+  <h2>The product carries the responsibility</h2>
+
+  <p>
+    The surrounding system has to turn an uncertain interpretation into a dependable business
+    action. For NeevFlow, that means combining model output with deterministic controls.
+  </p>
+
+  <ul>
+    <li>Required fields must be present and structurally valid.</li>
+    <li>Calculated values should agree with the document totals.</li>
+    <li>Potential duplicates need to be detected before they travel further.</li>
+    <li>Exceptions must be visible, understandable and assigned to the right person.</li>
+    <li>Every important action needs a trace that can be reviewed later.</li>
+  </ul>
+
+  <p>
+    None of this is glamorous in a short product video. It is, however, the part people rely on
+    when the software meets real money, real deadlines and real colleagues asking what happened.
+  </p>
+
+  <h2>Deterministic where it matters</h2>
+
+  <p>
+    I do not believe every decision should be delegated to a model. Some questions benefit from
+    interpretation. Others need an unambiguous rule.
+  </p>
+
+  <p>
+    “What is the likely invoice number?” is a reasonable model task. “Has this exact invoice
+    already been accepted for this organisation?” should not depend on a creative mood. The
+    system should check the relevant facts and return the same answer every time.
+  </p>
+
+  <p>
+    The useful design question is not “Where can we add AI?” It is “Which parts require
+    interpretation, which require certainty, and how do they work together?”
+  </p>
+
+  <aside class="note-callout">
+    <strong>A practical rule</strong>
+    <p>Use AI for ambiguity. Use code for guarantees. Use people for consequential judgment.</p>
+  </aside>
+
+  <h2>Human review is a feature, not a failure</h2>
+
+  <p>
+    Many automation products describe human involvement as something to eliminate. I see it
+    differently. A good system should remove routine work and make the remaining judgment easier.
+  </p>
+
+  <p>
+    When the software is uncertain, it should say so. When a value breaks a rule, it should show
+    the reason. When someone corrects a field, the system should keep the correction and continue
+    without turning the process into an archaeological dig.
+  </p>
+
+  <p>
+    The objective is not “zero humans.” The objective is that humans spend their time on the
+    cases where their context matters.
+  </p>
+
+  <h2>The model should be replaceable</h2>
+
+  <p>
+    Models will continue to improve. Prices, speed and capabilities will change. A product that
+    treats one model as its entire identity becomes fragile very quickly.
+  </p>
+
+  <p>
+    I want the extraction capability to be replaceable without redesigning the whole workflow.
+    The validation, permissions, review experience, integrations and audit history should remain
+    valuable even when the underlying model changes.
+  </p>
+
+  <p>
+    Customers do not care which model won a benchmark this week. They care whether the invoice
+    was processed correctly and whether they can understand what the system did. Fair enough.
+    They have work to do.
+  </p>
+
+  <h2>The wrapper is where the product lives</h2>
+
+  <p>
+    So yes, NeevFlow wraps AI capabilities. It also wraps them in business rules, state,
+    permissions, exception handling, human judgment and accountability. That wrapper is not an
+    embarrassing layer around the “real” technology. It is the part that makes the technology
+    useful.
+  </p>
+
+  <p>
+    The model can read the invoice. The product must help a business finish the job. That is a
+    much less magical sentence, and a much more demanding one.
+  </p>
+</NoteLayout>

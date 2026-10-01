@@ -1,0 +1,180 @@
+---
+import NoteLayout from '../../layouts/NoteLayout.astro';
+import { notes } from '../../data/notes';
+
+const note = notes[3];
+---
+
+<NoteLayout {...note}>
+  <div
+    slot="visual"
+    class="note-visual leverage-visual"
+    role="img"
+    aria-label="A manager creates clarity that enables a team to produce outcomes"
+  >
+    <span class="leverage-node">Manager</span>
+    <span class="leverage-signal" aria-hidden="true">clarity →</span>
+    <span class="leverage-node leverage-team">Team</span>
+    <span class="leverage-signal" aria-hidden="true">delivery →</span>
+    <span class="leverage-node leverage-outcome">Outcome</span>
+  </div>
+
+  <p class="note-opening">
+    Many new engineering managers struggle in their first 90 days, not because they are weak
+    engineers, but because they continue doing the job that made them successful before.
+  </p>
+
+  <p>
+    I made versions of these mistakes when I moved into leadership. I jumped into solutions,
+    stayed too close to the code, focused on visible tasks and underestimated the amount of work
+    required to create alignment between people.
+  </p>
+
+  <p>
+    All of it felt productive. That is what makes the transition difficult. The wrong work often
+    arrives disguised as competence.
+  </p>
+
+  <h2>Your output is no longer the main output</h2>
+
+  <p>
+    As an individual contributor, your work is relatively direct. You design a system, implement a
+    feature, investigate a problem or improve the quality of the codebase. Progress is often
+    visible in what you personally complete.
+  </p>
+
+  <p>
+    As a manager, your responsibility becomes the environment in which other people deliver. You
+    create clarity, establish priorities, develop people, improve decisions and make it easier for
+    the team to work across organisational boundaries.
+  </p>
+
+  <p>
+    This can feel strangely intangible. There is no pull request titled “Created trust between
+    product and engineering.” GitHub has once again failed to capture the full human experience.
+  </p>
+
+  <h2>The first trap is solving everything</h2>
+
+  <p>
+    New managers are often experienced engineers. When a difficult technical problem appears,
+    stepping in feels helpful and familiar. Sometimes it is necessary. If it becomes the default,
+    it creates two problems.
+  </p>
+
+  <p>
+    First, the team learns to wait for the manager’s answer. Second, the manager spends time on a
+    problem someone else could own while neglecting work that nobody else can do.
+  </p>
+
+  <p>
+    A more useful response is often to improve the problem-solving process. Ask what is known,
+    clarify the decision that must be made, identify who should own it and make sure the right
+    people have the context they need.
+  </p>
+
+  <h2>The second trap is avoiding discomfort</h2>
+
+  <p>
+    Difficult conversations do not become easier because they are postponed. Performance concerns,
+    unclear ownership and recurring conflict tend to accumulate interest.
+  </p>
+
+  <p>
+    In the first 90 days, a manager is learning the team and wants to build trust. It can be
+    tempting to interpret trust as constant agreement or to delay feedback until there is a
+    perfectly worded message. Perfect wording rarely arrives. Meanwhile, ambiguity spreads.
+  </p>
+
+  <p>
+    Clear, respectful feedback is part of trust. The person should understand what you observed,
+    why it matters and what needs to change. Kindness without clarity is often just a slower form
+    of confusion.
+  </p>
+
+  <h2>The third trap is managing activity</h2>
+
+  <p>
+    Tickets, estimates and status updates are easy to count. Outcomes are harder. A team can close
+    a large number of tasks while the product remains late, unreliable or disconnected from the
+    customer problem.
+  </p>
+
+  <p>
+    New managers should learn how the organisation defines success, where decisions are made and
+    which dependencies repeatedly slow delivery. Then they can help the team connect day-to-day
+    work with a result that matters.
+  </p>
+
+  <aside class="note-callout">
+    <strong>The role in one sentence</strong>
+    <p>You are responsible for building a team that can consistently deliver, not for personally rescuing every task.</p>
+  </aside>
+
+  <h2>Days 1 to 30: listen for the system</h2>
+
+  <p>
+    The first month should be heavy on listening. Meet each person, understand what they own and
+    ask what makes their work unnecessarily difficult. Speak with product, design and neighbouring
+    engineering teams. Observe how priorities change and how decisions travel.
+  </p>
+
+  <p>
+    Avoid announcing a transformation before understanding what already works. Teams are not
+    waiting for a new manager to reveal that communication is important. They need someone to
+    understand their specific constraints.
+  </p>
+
+  <p>
+    By the end of this period, you should have an initial map of strengths, risks, expectations and
+    unresolved tensions. It will be incomplete. That is fine. A map drawn in the first week should
+    be treated as a sketch, not sacred text.
+  </p>
+
+  <h2>Days 31 to 60: create clarity</h2>
+
+  <p>
+    Now make priorities, roles and decision boundaries easier to understand. Agree on what the team
+    is trying to achieve and what it is not doing. Clarify ownership where work repeatedly falls
+    between people.
+  </p>
+
+  <p>
+    Establish useful rhythms for one-to-ones, planning, technical decisions and stakeholder
+    communication. A ritual should solve a coordination problem. If nobody knows why a meeting
+    exists, that meeting may be ready for a dignified retirement.
+  </p>
+
+  <h2>Days 61 to 90: strengthen the team</h2>
+
+  <p>
+    With context and basic clarity in place, focus on capability. Give people meaningful ownership.
+    Coach emerging leaders. Address performance concerns. Improve one or two systemic problems that
+    materially affect delivery rather than launching ten improvement programmes.
+  </p>
+
+  <p>
+    This is also the time to examine whether your own involvement is creating a bottleneck. If
+    every decision still routes through you, the team may be busy but the management system is not
+    scaling.
+  </p>
+
+  <h2>AI can assist, but it cannot manage</h2>
+
+  <p>
+    AI can help a manager prepare a difficult conversation, structure feedback, summarise a meeting
+    or turn rough notes into a clearer stakeholder update. These are useful forms of leverage.
+  </p>
+
+  <p>
+    It cannot know the full context of a person’s performance, detect what remains unsaid in a
+    relationship or take responsibility for a judgment. Used badly, it can make vague management
+    language sound polished without making it honest.
+  </p>
+
+  <p>
+    The first 90 days are not about proving that you can do everyone’s job. They are about learning
+    the system, earning enough trust to improve it and helping the team succeed without needing you
+    at the centre of every answer.
+  </p>
+</NoteLayout>

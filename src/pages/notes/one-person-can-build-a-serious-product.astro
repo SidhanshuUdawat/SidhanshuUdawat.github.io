@@ -1,0 +1,170 @@
+---
+import NoteLayout from '../../layouts/NoteLayout.astro';
+import { notes } from '../../data/notes';
+
+const note = notes[1];
+---
+
+<NoteLayout {...note}>
+  <div
+    slot="visual"
+    class="note-visual build-loop"
+    role="img"
+    aria-label="A repeated product development loop from specification through agent, review, test and shipping"
+  >
+    <span class="loop-node" style="--step: 0">Specify</span>
+    <span class="loop-node" style="--step: 1">Direct</span>
+    <span class="loop-node" style="--step: 2">Review</span>
+    <span class="loop-node" style="--step: 3">Test</span>
+    <span class="loop-node" style="--step: 4">Ship</span>
+    <span class="loop-caption">Then look at what broke and go around again.</span>
+  </div>
+
+  <p class="note-opening">
+    I am building an AI-native SaaS product as a solo founder. I do not type every line of code
+    myself, and I no longer think that is a particularly useful measure of the work.
+  </p>
+
+  <p>
+    I write specifications, break problems into bounded tasks, direct coding agents, review what
+    they produce, test the result and send work back when it is wrong. It is closer to running a
+    small, extremely fast and occasionally confused engineering team than using autocomplete.
+  </p>
+
+  <p>
+    The result is a working product where people can sign up, upload invoices, inspect extracted
+    details, deal with duplicates and export results. One person can now build something that
+    previously required several specialised roles to get moving.
+  </p>
+
+  <p>That does not mean one person suddenly knows everything. It means the bottleneck has moved.</p>
+
+  <h2>Start with the specification</h2>
+
+  <p>
+    The quality of AI-assisted development depends heavily on the quality of the task. “Build an
+    invoice app” is not a specification. It is a wish wearing a technical hat.
+  </p>
+
+  <p>
+    I need to describe the behaviour, boundaries, failure cases and acceptance criteria. What
+    happens when a document is unreadable? How do we identify a duplicate? Which organisation is
+    allowed to see the record? What should the interface show while processing is incomplete?
+  </p>
+
+  <p>
+    Writing this down is not administrative overhead. It is product design. The agent forces me
+    to make decisions that a human team would also need, only much sooner and with fewer meetings.
+  </p>
+
+  <h2>Give agents bounded work</h2>
+
+  <p>
+    Agents are most useful when the task has a clear surface. Add a validation rule. Implement a
+    state transition. Create a page using an established component pattern. Write tests for a
+    known behaviour.
+  </p>
+
+  <p>
+    Large, vague requests invite large, vague implementations. The agent will fill missing context
+    with assumptions, and it will do so at machine speed. This is impressive right up to the
+    moment you realise it has confidently renovated the wrong room.
+  </p>
+
+  <p>
+    I keep tasks small enough to review and explicit enough to verify. The point is not to make
+    the agent busy. The point is to move the product forward without losing control of it.
+  </p>
+
+  <h2>Review is still engineering</h2>
+
+  <p>
+    Generated code is not finished code. I read the changes, question the structure and check how
+    they interact with the rest of the system. I look for duplicated logic, weak boundaries,
+    missing failure handling and security assumptions that were never stated.
+  </p>
+
+  <p>
+    Sometimes the implementation is excellent. Sometimes it passes the immediate test while
+    quietly creating tomorrow’s problem. This is not unique to AI. Human engineers have been
+    producing both varieties for years.
+  </p>
+
+  <p>
+    The difference is volume. An agent can create a surprising amount of code before lunch, so a
+    founder needs the discipline to reject work quickly. More output is not the same as more
+    progress.
+  </p>
+
+  <aside class="note-callout">
+    <strong>The operating loop</strong>
+    <p>Specify clearly. Generate narrowly. Review critically. Test behaviour. Keep only what earns its place.</p>
+  </aside>
+
+  <h2>Tests become more important, not less</h2>
+
+  <p>
+    When implementation gets cheaper, verification becomes more valuable. Tests give the agent a
+    boundary and give me evidence that a change behaves as intended. They also make later changes
+    less dependent on memory, which is helpful because my memory does not support version control.
+  </p>
+
+  <p>
+    I use tests to protect business rules, permissions and important workflow transitions. I also
+    test the product as a user because technically correct software can still be confusing,
+    awkward or simply unpleasant to operate.
+  </p>
+
+  <h2>Design can move faster too</h2>
+
+  <p>
+    The same pattern applies to product design. AI can produce alternatives quickly, help explore
+    layouts and expose assumptions before a direction becomes expensive. That speed is useful.
+  </p>
+
+  <p>
+    Judgment still decides what belongs. A screen can be polished and wrong. A flow can be clever
+    and make the customer do more work. I use AI to create options, then evaluate those options
+    against the problem the product is supposed to solve.
+  </p>
+
+  <h2>What has not become easy</h2>
+
+  <p>
+    AI has changed the economics of producing software. It has not removed the need to choose a
+    worthwhile problem, understand customers, establish trust or build a business.
+  </p>
+
+  <p>
+    Finding customers and making money is still hard. Deciding what not to build is still hard.
+    Knowing whether silence means “not interested,” “not now,” or “your message was confusing” is
+    still hard. No coding agent has volunteered to handle rejection for me, which feels slightly
+    unfair.
+  </p>
+
+  <p>
+    This is why I describe the change as leverage, not magic. A founder can cover more ground and
+    test ideas with less capital. That creates a real advantage, but it also removes a convenient
+    excuse. If building is faster, we have to spend more time asking whether we are building the
+    right thing.
+  </p>
+
+  <h2>The role has changed</h2>
+
+  <p>
+    I still need engineering knowledge. Without it, I could not evaluate architecture, security,
+    maintainability or correctness. But my highest-value work is increasingly about context and
+    direction: defining the problem, setting constraints, reviewing decisions and connecting the
+    implementation to customer value.
+  </p>
+
+  <p>
+    One person can build a serious product now. Not because the tools are infallible, and not
+    because experience has stopped mattering. It is possible because one experienced person can
+    coordinate capabilities that used to require a larger team.
+  </p>
+
+  <p>
+    The typing was never the whole job. Now that part is becoming impossible to ignore.
+  </p>
+</NoteLayout>

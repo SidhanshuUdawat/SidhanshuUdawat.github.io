@@ -6,6 +6,7 @@ interface Props {
   description?: string;
   canonicalPath?: string;
   article?: boolean;
+  publishedTime?: string;
   noindex?: boolean;
 }
 
@@ -14,6 +15,7 @@ const {
   description = 'Founder of NeevFlow. Engineering and AI delivery leader building practical automation for real business operations.',
   canonicalPath = '/',
   article = false,
+  publishedTime,
   noindex = false,
 } = Astro.props;
 
@@ -58,6 +60,7 @@ const structuredData = {
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:alt" content="Sidhanshu Udawat, Founder of NeevFlow" />
+    {article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -86,12 +89,23 @@ const structuredData = {
         <span>Sidhanshu</span>
         <span>Udawat</span>
       </a>
-      <nav aria-label="Primary navigation">
+      <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="/#neevflow">NeevFlow</a>
         <a href="/#journey">Journey</a>
         <a href="/#principles">Principles</a>
+        <a href="/notes/">Notes</a>
         <a href="/#contact">Contact</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/#neevflow">NeevFlow</a>
+          <a href="/#journey">Journey</a>
+          <a href="/#principles">Principles</a>
+          <a href="/notes/">Notes</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </details>
       <a class="header-cta" href="https://neevflow.ai" target="_blank" rel="noreferrer">
         Visit NeevFlow <span aria-hidden="true">↗</span>
       </a>
