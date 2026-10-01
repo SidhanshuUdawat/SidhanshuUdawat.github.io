@@ -1,0 +1,33 @@
+---
+import ArchivePost from '../../layouts/ArchivePost.astro';
+---
+
+<ArchivePost
+  title="Markdown Test File"
+  date="7 December 2019"
+  tags="Testing"
+  description="An archived Markdown and syntax-highlighting test from the original site."
+  canonicalPath="/pensieve/markdown-playground/"
+>
+  <p class="archive-disclaimer">
+    This page was originally created as a formatting and syntax-highlighting test. It is retained
+    to preserve the original URL.
+  </p>
+  <h2>Code block</h2>
+  <pre><code>{`class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 'coconut' };
+  }
+
+  render() {
+    return <p>Selected flavor: {this.state.value}</p>;
+  }
+}`}</code></pre>
+  <h2>Typography</h2>
+  <p>
+    Paragraph text, <strong>strong text</strong>, <em>emphasis</em>, inline <code>code</code> and
+    links were tested here in the original site.
+  </p>
+  <blockquote>A small archived page can still do one useful job: keep an old URL intact.</blockquote>
+</ArchivePost>

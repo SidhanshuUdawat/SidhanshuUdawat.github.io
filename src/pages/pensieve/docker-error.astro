@@ -1,0 +1,31 @@
+---
+import ArchivePost from '../../layouts/ArchivePost.astro';
+---
+
+<ArchivePost
+  title="Docker Compose Error"
+  date="13 December 2019"
+  tags="WordPress · Docker"
+  description="Resolving an unsupported Docker Compose workdir API error."
+  canonicalPath="/pensieve/docker-error/"
+>
+  <h2>Problem</h2>
+  <p>
+    While updating a project with webpack, I encountered a strange error when running a simple
+    Composer script through Docker Compose.
+  </p>
+  <pre><code>#!/bin/bash
+docker-compose exec -w /var/www/html/wp-content/themes/skela wordpress composer "$@"</code></pre>
+  <p>Running <code>./bin/composer install</code> returned:</p>
+  <pre><code>ERROR: Setting workdir for exec is not supported in API &lt; 1.35 (1.30)</code></pre>
+  <p>The error was coming from the <code>-w</code> flag in the command.</p>
+
+  <h2>Solution</h2>
+  <p>
+    Updating the Compose file version from <code>3.5</code> to <code>3.6</code> resolved the issue.
+  </p>
+  <pre><code>version: '3.6'
+services:
+  wordpress:
+    build: .</code></pre>
+</ArchivePost>

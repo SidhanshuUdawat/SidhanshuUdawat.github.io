@@ -1,0 +1,26 @@
+---
+import ArchivePost from '../../layouts/ArchivePost.astro';
+---
+
+<ArchivePost
+  title="WordPress Publishing Error"
+  date="3 December 2019"
+  tags="WordPress"
+  description="Tracing an invalid JSON response in WordPress back to a local HTTPS mismatch."
+  canonicalPath="/pensieve/wordpress-publish-error/"
+>
+  <h2>Problem</h2>
+  <p>
+    While working on a local WordPress project, I could not update or publish a post from the
+    admin. WordPress sometimes returned the more useful message:
+  </p>
+  <blockquote>Publishing failed. Error message: The response is not a valid JSON response.</blockquote>
+
+  <h2>Solution</h2>
+  <p>
+    The JSON message initially suggested a Gutenberg or ACF problem. The actual issue was a
+    protocol mismatch: the admin was loaded over HTTPS while the local site used HTTP, producing
+    a CORS error.
+  </p>
+  <p>Opening the local WordPress admin over HTTP allowed posts to publish normally.</p>
+</ArchivePost>

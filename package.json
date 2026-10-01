@@ -1,0 +1,16 @@
+{
+  "name": "sidhanshu-udawat-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.10",
+    "astro": "7.3.5",
+    "typescript": "6.0.3"
+  }
+}

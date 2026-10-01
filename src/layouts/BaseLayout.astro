@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  article?: boolean;
+  noindex?: boolean;
+}
+
+const {
+  title = 'Sidhanshu Udawat | Founder of NeevFlow',
+  description = 'Founder of NeevFlow. Engineering and AI delivery leader building practical automation for real business operations.',
+  canonicalPath = '/',
+  article = false,
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, Astro.site);
+const socialImage = new URL('/og.png', Astro.site);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sidhanshu Udawat',
+  url: 'https://sidhanshuudawat.com',
+  image: 'https://sidhanshuudawat.com/images/sidhanshu-udawat-founder.jpg',
+  jobTitle: 'Founder',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'NeevFlow',
+    url: 'https://neevflow.ai',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/sidhanshu-udawat/',
+    'https://github.com/SidhanshuUdawat',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f2efe6" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/jpeg" href="/images/sidhanshu-udawat-founder.jpg" />
+    <link rel="apple-touch-icon" href="/images/sidhanshu-udawat-founder.jpg" />
+
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Sidhanshu Udawat, Founder of NeevFlow" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.getRegistrations().then((registrations) => {
+            registrations.forEach((registration) => registration.unregister());
+          });
+        });
+      }
+
+      if ('caches' in window) {
+        caches.keys().then((keys) => keys.forEach((key) => caches.delete(key)));
+      }
+    </script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Sidhanshu Udawat, home">
+        <span>Sidhanshu</span>
+        <span>Udawat</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/#neevflow">NeevFlow</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#principles">Principles</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="https://neevflow.ai" target="_blank" rel="noreferrer">
+        Visit NeevFlow <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <slot />
+  </body>
+</html>

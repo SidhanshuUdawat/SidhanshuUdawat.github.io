@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { tag: 'docker' },
+      props: {
+        label: 'Docker',
+        posts: [
+          {
+            title: 'Docker Compose Error',
+            date: '13 December 2019',
+            href: '/pensieve/docker-error/',
+            description: 'A short note on resolving an unsupported Docker Compose workdir API error.',
+          },
+        ],
+      },
+    },
+    {
+      params: { tag: 'testing' },
+      props: {
+        label: 'Testing',
+        posts: [
+          {
+            title: 'Markdown Test File',
+            date: '7 December 2019',
+            href: '/pensieve/markdown-playground/',
+            description: 'An archived formatting and syntax-highlighting test from the original site.',
+          },
+        ],
+      },
+    },
+    {
+      params: { tag: 'word-press' },
+      props: {
+        label: 'WordPress',
+        posts: [
+          {
+            title: 'Docker Compose Error',
+            date: '13 December 2019',
+            href: '/pensieve/docker-error/',
+            description: 'A short note on resolving an unsupported Docker Compose workdir API error.',
+          },
+          {
+            title: 'WordPress Publishing Error',
+            date: '3 December 2019',
+            href: '/pensieve/wordpress-publish-error/',
+            description: 'Tracing an invalid JSON response in WordPress back to a local HTTPS mismatch.',
+          },
+        ],
+      },
+    },
+  ];
+}
+
+const tag = Astro.params.tag;
+const { label, posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`${label} archive | Sidhanshu Udawat`}
+  description={`Archived ${label} notes by Sidhanshu Udawat.`}
+  canonicalPath={`/pensieve/tags/${tag}/`}
+>
+  <main id="content" class="archive-page">
+    <header class="archive-header">
+      <p class="section-kicker">Pensieve archive</p>
+      <h1>{label}</h1>
+      <p>Older technical notes filed under {label}, preserved at their original URL.</p>
+    </header>
+
+    <div class="archive-list">
+      {posts.map((post, index) => (
+        <a class="archive-item" href={post.href}>
+          <span>0{index + 1}</span>
+          <div>
+            <p>{post.date}</p>
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+          </div>
+          <span aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+
+    <a class="text-link" href="/pensieve/">← All archived notes</a>
+  </main>
+</BaseLayout>

@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const journey = [
+  {
+    years: '2026 - now',
+    role: 'Founder & AI Product Orchestrator',
+    company: 'NeevFlow',
+    place: 'Mumbai, India',
+    description:
+      'Taking an AI-enabled operations platform from discovery to production: product, architecture, full-stack delivery, cloud deployment and early customer validation.',
+    href: 'https://neevflow.ai',
+  },
+  {
+    years: '2023 - 2025',
+    role: 'Senior Engineering Manager · L5',
+    company: 'Qonto',
+    place: 'Munich, Germany',
+    description:
+      'Led four cross-functional teams with 15+ engineers and four managers across France, Germany, Italy and Spain in a regulated fintech environment.',
+    href: 'https://qonto.com',
+  },
+  {
+    years: '2018 - 2022',
+    role: 'Engineering Lead · Full Stack, Mobile & Backend',
+    company: 'AutoScout24',
+    place: 'Munich, Germany',
+    description:
+      'Led a cross-functional team across mobile and backend, delivering Financing & Insurance capabilities and a privacy-consent migration to AWS.',
+    href: 'https://www.autoscout24.com',
+  },
+  {
+    years: '2011 - 2018',
+    role: 'Hands-on engineering foundations',
+    company: '10 Digital · market-i · TCS · Atos · Zapak · i-XL',
+    place: 'London · Dubai · Mumbai',
+    description:
+      'Built mobile applications, media products, enterprise systems and games, progressing from individual contributor to technical lead.',
+  },
+];
+
+const impact = [
+  {
+    company: 'NeevFlow',
+    context: 'Founder',
+    location: 'Mumbai, India',
+    statement:
+      'Took the platform from product discovery to production, combining AI extraction with deterministic validation, duplicate detection, human review, permissions and audit trails.',
+    detail: 'Product · Architecture · Full-stack delivery',
+  },
+  {
+    company: 'Qonto',
+    context: 'Senior Engineering Manager',
+    location: 'Munich, Germany',
+    statement:
+      'Led four cross-functional teams with 15+ engineers and four managers across France, Germany, Italy and Spain.',
+    detail: 'Multi-team leadership · Regulated fintech',
+  },
+  {
+    company: 'AutoScout24',
+    context: 'Engineering Lead',
+    location: 'Munich, Germany',
+    statement:
+      'Led delivery for Financing and Insurance capabilities and the migration of Privacy Consent services to AWS.',
+    detail: 'Mobile · Backend · Cloud',
+  },
+];
+
+const principles = [
+  {
+    index: '01',
+    title: 'AI is a capability, not the product.',
+    body: 'Models can extract and suggest. The product still has to validate, apply rules, handle exceptions and make the next step obvious.',
+  },
+  {
+    index: '02',
+    title: 'Reliability is designed in.',
+    body: 'Deterministic controls, human review, permissions and audit trails matter wherever business decisions carry consequences.',
+  },
+  {
+    index: '03',
+    title: 'Start with the operating problem.',
+    body: 'Useful automation begins with how people actually work, not with a blank canvas, a new tool or a prompt looking for a purpose.',
+  },
+  {
+    index: '04',
+    title: 'Leadership multiplies judgment.',
+    body: 'The aim is not to be the person with every answer. It is to create clarity, grow capable leaders and help teams deliver with confidence.',
+  },
+];
+
+const writing = [
+  {
+    type: 'Product note',
+    title: 'The AI is not the product',
+    description: 'Why the surrounding workflow, including validation, exceptions, review and auditability, is where the product gets built.',
+    href: 'https://www.linkedin.com/posts/sidhanshu-udawat_ai-saas-startups-activity-7502969277361287168-ugPb',
+  },
+  {
+    type: 'Build in public',
+    title: 'Small businesses want the workflow already built',
+    description: 'The product thesis behind moving NeevFlow toward prebuilt workflows for real business operations.',
+    href: 'https://www.linkedin.com/posts/sidhanshu-udawat_neevflow-automate-your-business-workflows-activity-7492284138658504706-Hhpx',
+  },
+  {
+    type: 'Product note',
+    title: 'One person can build a serious product now',
+    description: 'How AI changes product development when the founder writes the specs, directs the tools and remains responsible for quality.',
+    href: 'https://www.linkedin.com/posts/sidhanshu-udawat_aicoding-softwareengineering-productdesign-share-7509196478016487424-7-WJ',
+  },
+  {
+    type: 'Leadership',
+    title: 'The first 90 days of engineering management',
+    description: 'The shift from solving technical problems yourself to building a team that can consistently deliver.',
+    href: 'https://www.linkedin.com/posts/sidhanshu-udawat_engineeringmanager-techleadership-softwareengineering-activity-7453186649737355265-_fFG',
+  },
+];
+---
+
+<BaseLayout>
+  <main id="content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Founder of NeevFlow · Mumbai, India</p>
+        <h1 id="hero-title">I build practical AI systems for real operational work.</h1>
+        <p class="hero-intro">
+          I’m Sidhanshu Udawat, an engineering and AI delivery leader with 15+ years across SaaS,
+          fintech and enterprise software. Today, I’m building NeevFlow.
+        </p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button button-primary" href="https://neevflow.ai" target="_blank" rel="noreferrer">
+            Visit NeevFlow <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link" href="#neevflow">What I’m building <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <figure class="portrait-frame">
+        <img
+          src="/images/sidhanshu-udawat-founder.jpg"
+          width="800"
+          height="1000"
+          alt="Portrait of Sidhanshu Udawat"
+          fetchpriority="high"
+        />
+        <figcaption>
+          <span>Founder</span>
+          <span>Builder</span>
+          <span>Engineering leader</span>
+        </figcaption>
+      </figure>
+
+    </section>
+
+    <section class="section neevflow-section" id="neevflow" aria-labelledby="neevflow-title">
+      <div class="section-heading inverse">
+        <p class="section-kicker">01 · What I’m building</p>
+        <h2 id="neevflow-title">Automation that behaves like dependable business software.</h2>
+      </div>
+
+      <div class="neevflow-grid">
+        <div class="neevflow-lead">
+          <p>
+            NeevFlow is an AI-powered workflow automation platform for businesses that want to
+            reduce repetitive operational work without adding complexity.
+          </p>
+          <p>
+            It starts with finance operations and invoice processing: ready-to-use workflows
+            that connect to the tools teams already use, while keeping people in control.
+          </p>
+          <a class="button button-light" href="https://neevflow.ai" target="_blank" rel="noreferrer">
+            Explore NeevFlow <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="product-statement">
+          <p class="statement-label">The operating principle</p>
+          <blockquote>
+            AI can read an invoice. The product must also validate it, catch duplicates, handle
+            exceptions, involve the right person and leave an audit trail.
+          </blockquote>
+        </div>
+      </div>
+
+      <ul class="product-pillars" aria-label="NeevFlow product principles">
+        <li><span>01</span> Business software first</li>
+        <li><span>02</span> AI behind the scenes</li>
+        <li><span>03</span> Deterministic where it matters</li>
+        <li><span>04</span> Human judgment stays in control</li>
+      </ul>
+    </section>
+
+    <section class="section journey-section" id="journey" aria-labelledby="journey-title">
+      <div class="section-heading">
+        <p class="section-kicker">02 · Career journey</p>
+        <h2 id="journey-title">From building mobile products to leading teams, and now building NeevFlow.</h2>
+      </div>
+
+      <div class="journey-list">
+        {journey.map((item) => (
+          <article class="journey-item">
+            <p class="journey-years">{item.years}</p>
+            <div class="journey-role">
+              <h3>{item.role}</h3>
+              <p>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer">{item.company} ↗</a>
+                ) : item.company}
+              </p>
+            </div>
+            <p class="journey-place">{item.place}</p>
+            <p class="journey-description">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section impact-section" id="impact" aria-labelledby="impact-title">
+      <div class="section-heading compact">
+        <p class="section-kicker">03 · Selected impact</p>
+        <h2 id="impact-title">Evidence from the work.</h2>
+      </div>
+
+      <div class="impact-grid">
+        {impact.map((item, index) => (
+          <article class="impact-card">
+            <div class="impact-meta">
+              <span>0{index + 1}</span>
+              <div>
+                <p>{item.context}</p>
+                <p class="impact-location">{item.location}</p>
+              </div>
+            </div>
+            <h3>{item.company}</h3>
+            <p class="impact-statement">{item.statement}</p>
+            <p class="impact-detail">{item.detail}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section principles-section" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading compact">
+        <p class="section-kicker">04 · How I think and build</p>
+        <h2 id="principles-title">The principles behind the work.</h2>
+      </div>
+
+      <div class="principles-grid">
+        {principles.map((principle) => (
+          <article class="principle-card">
+            <p class="principle-index">{principle.index}</p>
+            <h3>{principle.title}</h3>
+            <p>{principle.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section writing-section" id="writing" aria-labelledby="writing-title">
+      <div class="section-heading compact">
+        <p class="section-kicker">05 · Selected writing</p>
+        <h2 id="writing-title">Notes on products, AI and engineering leadership.</h2>
+      </div>
+
+      <div class="writing-list">
+        {writing.map((item, index) => (
+          <a class="writing-item" href={item.href} target="_blank" rel="noreferrer">
+            <span class="writing-number">0{index + 1}</span>
+            <span class="writing-copy">
+              <span class="writing-type">{item.type}</span>
+              <strong>{item.title}</strong>
+              <span>{item.description}</span>
+            </span>
+            <span class="writing-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+
+      <p class="archive-note">
+        Older technical notes are kept as an archive.
+        <a class="text-link" href="/pensieve/">Browse Pensieve <span aria-hidden="true">→</span></a>
+      </p>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading compact">
+        <p class="section-kicker">06 · About</p>
+        <h2 id="about-title">Engineering depth, product judgment and a bias toward shipping.</h2>
+      </div>
+
+      <div class="about-grid">
+        <p class="about-lead">
+          My career has moved across mobile, backend systems, cloud architecture, engineering
+          management and company building. The thread is the same: turn ambiguous problems
+          into useful, reliable products.
+        </p>
+        <div class="about-copy">
+          <p>
+            I’ve built products and led teams across India, the UAE, the UK and Germany. At Qonto,
+            I led multiple engineering teams in regulated fintech. At AutoScout24, I combined
+            hands-on technical leadership with people and product responsibility.
+          </p>
+          <p>
+            Now I’m applying that experience as the founder of NeevFlow, working across discovery,
+            product design, engineering, AI-assisted delivery and early customer conversations.
+          </p>
+          <ul class="expertise-list" aria-label="Areas of expertise">
+            <li>Engineering leadership</li>
+            <li>Product & delivery</li>
+            <li>Applied AI workflows</li>
+            <li>Cloud architecture</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <p class="section-kicker">07 · Contact</p>
+      <h2 id="contact-title">Let’s talk about useful software and the work behind it.</h2>
+      <div class="contact-links">
+        <a href="mailto:udawat.sidhanshu@gmail.com">udawat.sidhanshu@gmail.com</a>
+        <a href="https://www.linkedin.com/in/sidhanshu-udawat/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/SidhanshuUdawat" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Sidhanshu Udawat</p>
+    <p>Founder of NeevFlow · Mumbai, India</p>
+    <a href="#content">Back to top ↑</a>
+  </footer>
+</BaseLayout>
