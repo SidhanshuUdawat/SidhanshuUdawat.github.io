@@ -1187,7 +1187,7 @@ h3 {
 
 @media (max-width: 1000px) {
   .site-header {
-    grid-template-columns: minmax(120px, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     column-gap: clamp(1rem, 3vw, 2rem);
   }
 
@@ -1198,7 +1198,15 @@ h3 {
   .mobile-menu {
     position: relative;
     display: block;
+    grid-column: 3;
+    grid-row: 1;
     justify-self: end;
+  }
+
+  .header-cta {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
   }
 
   .mobile-menu summary {
@@ -1496,7 +1504,7 @@ h3 {
 
 @media (max-width: 520px) {
   .site-header {
-    grid-template-columns: minmax(94px, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     column-gap: 0.65rem;
   }
 
