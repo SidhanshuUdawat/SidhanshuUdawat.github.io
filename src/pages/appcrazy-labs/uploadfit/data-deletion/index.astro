@@ -1,0 +1,158 @@
+---
+import AppLayout from '../../../../layouts/AppLayout.astro';
+import { uploadfit, appPath, studio, supportLink } from '../../../../data/apps';
+
+const deletionEmail = supportLink('UploadFit data deletion request');
+---
+
+<AppLayout
+  title="UploadFit Data Deletion | AppCrazy Labs"
+  description="Request deletion of UploadFit support and RevenueCat data. Learn what can be deleted, what stays on your device, and which transaction records may need to be retained."
+  canonicalPath={`${appPath(uploadfit)}data-deletion/`}
+  heading="UploadFit data deletion"
+  kicker="AppCrazy Labs · Privacy & support"
+  deck="How to request deletion of information associated with your use of UploadFit."
+  backLabel="UploadFit"
+  backHref={appPath(uploadfit)}
+>
+  <div slot="meta" class="hero-actions">
+    <a class="button button-primary" href={deletionEmail}>Email a deletion request ↗</a>
+    <a class="text-link" href={`${appPath(uploadfit)}privacy/`}>Privacy policy →</a>
+  </div>
+
+  <p>
+    <strong>UploadFit has no user accounts.</strong> There is no UploadFit account to
+    close, but you can request deletion of information associated with RevenueCat
+    purchase records or support interactions. UploadFit is developed by Sidhanshu Udawat
+    under the AppCrazy Labs studio brand.
+  </p>
+  <aside class="note-callout" aria-label="Local image processing">
+    <strong>Your images stay on your device</strong>
+    <p>
+      Images are processed locally and are not uploaded to AppCrazy Labs servers.
+      We have no server copies of your processed images to delete.
+    </p>
+  </aside>
+
+  <section id="request" aria-labelledby="request-title">
+    <h2 id="request-title">How to submit a request</h2>
+    <ol>
+      <li>
+        Email <a href={deletionEmail}>{studio.email}</a> with the subject
+        “UploadFit data deletion request”. You can use the button above or compose
+        the email yourself.
+      </li>
+      <li>
+        Tell us whether you want to delete support correspondence, RevenueCat data,
+        or both. For support messages, use the email address you previously contacted
+        us from, if possible.
+      </li>
+      <li>
+        For purchase-related requests, include a Google Play order reference or a
+        RevenueCat app user identifier if you already have one. If you do not, send
+        the request anyway and we will help identify the relevant record.
+      </li>
+    </ol>
+    <p>
+      You do not need to sign in, create an account or reinstall UploadFit to submit
+      a request. Please do not send passwords, payment card details, identity documents
+      or sensitive images. We may ask for limited additional information to verify
+      that a record belongs to you before deleting it.
+    </p>
+    <p>
+      We review requests without undue delay and respond within applicable legal
+      deadlines. Our reply will confirm what was deleted, explain any information
+      needed to complete the request, or describe any records that must be retained
+      and the reason and applicable retention period.
+    </p>
+  </section>
+
+  <section aria-labelledby="deletable-title">
+    <h2 id="deletable-title">What can be deleted</h2>
+    <ul>
+      <li>
+        <strong>Support interactions:</strong> email correspondence, contact information
+        and attachments you voluntarily sent to us, subject to the retention exceptions below.
+      </li>
+      <li>
+        <strong>RevenueCat records we manage:</strong> the customer record and associated
+        app user identifiers, purchase history, entitlement information and customer
+        attributes, where present and eligible for deletion. We handle these requests
+        through RevenueCat; you do not need a RevenueCat account.
+      </li>
+    </ul>
+    <p>
+      A RevenueCat customer identifier is a technical identifier used to manage purchases,
+      not an UploadFit sign-in account. An image attached to a support email is part of
+      that correspondence, separate from images processed locally in the app.
+    </p>
+  </section>
+
+  <section aria-labelledby="local-title">
+    <h2 id="local-title">Deleting images and data on your device</h2>
+    <p>
+      Delete saved images using your gallery or file manager. Android’s clear-storage
+      controls or uninstalling UploadFit remove app-managed local data. Exported files,
+      copies shared with another app and cloud backups can remain; delete those through
+      the relevant app or backup service. We cannot remotely delete files on your device.
+    </p>
+    <p>Uninstalling UploadFit does not automatically delete support emails or purchase records.</p>
+  </section>
+
+  <section id="retention" aria-labelledby="retention-title">
+    <h2 id="retention-title">What may be retained, and for how long</h2>
+    <ul>
+      <li>
+        <strong>Support information:</strong> normally kept only until the enquiry and
+        necessary follow-up are resolved, or an eligible deletion request is completed.
+        Records needed for an ongoing dispute or legal obligation are retained only
+        for the period that reason requires.
+      </li>
+      <li>
+        <strong>RevenueCat purchase and entitlement data:</strong> normally retained for
+        as long as needed to provide and restore Pro access, unless you request deletion.
+        We delete eligible records after verifying your request. Any separate transaction
+        evidence required for tax, accounting, fraud prevention or a legal dispute is
+        retained only until the applicable required period ends or the issue is resolved.
+      </li>
+      <li>
+        <strong>Google Play transaction records:</strong> Google controls its own payment
+        and transaction records. A request to us does not erase them. Their retention
+        depends on Google’s policies and applicable financial or legal obligations;
+        we cannot promise a deletion date for records controlled by Google.
+      </li>
+    </ul>
+    <p>
+      There is no single retention period for every transaction or jurisdiction.
+      If we must retain information after your request, we will explain which records,
+      why, and the applicable duration or criteria for deciding when they can be deleted.
+      Retained information is limited to what is needed for that purpose.
+      See <a href="https://policies.google.com/technologies/retention">Google’s retention policy</a>
+      {' '}and <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section aria-labelledby="purchases-title">
+    <h2 id="purchases-title">Purchases, Pro access and advertising data</h2>
+    <p>
+      Deleting RevenueCat records may affect recognition or restoration of your lifetime
+      Pro purchase. It does not itself issue a refund or delete your Google account.
+      Continuing to use UploadFit or restoring a purchase can create a new RevenueCat record.
+    </p>
+    <p>
+      Google AdMob and its advertising partners manage advertising data separately.
+      For information about their processing and available privacy controls, see the{' '}
+      <a href={`${appPath(uploadfit)}privacy/#advertising`}>advertising section of our privacy policy</a>.
+      Contact us if you need help directing a request to the relevant provider.
+    </p>
+  </section>
+
+  <section aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>
+      <strong>Legal developer / publisher:</strong> Sidhanshu Udawat<br />
+      <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={deletionEmail}>{studio.email}</a>
+    </p>
+    <p>Last updated: <time datetime="2026-10-03">3 October 2026</time>.</p>
+  </section>
+</AppLayout>
