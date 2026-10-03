@@ -50,6 +50,8 @@ const structuredData = {
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+    <!-- Keep permanently. Raw HTML preserves the supplied verification tag exactly. -->
+    <Fragment set:html={'<meta name="google-site-verification" content="hZzf7FoUMdkdBlRwOjViWHQgHagTIaqDVt0DeFOnQes" />'} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/jpeg" href="/images/sidhanshu-udawat-founder.jpg" />
     <link rel="apple-touch-icon" href="/images/sidhanshu-udawat-founder.jpg" />
