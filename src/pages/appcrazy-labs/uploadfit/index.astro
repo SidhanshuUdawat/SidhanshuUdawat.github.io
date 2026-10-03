@@ -1,0 +1,78 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+import AppSupport from '../../../components/AppSupport.astro';
+import { uploadfit, appPath, studio } from '../../../data/apps';
+
+const features = [
+  ['Exact dimensions', 'Set the image width and height to match the pixel dimensions an upload form asks for.'],
+  ['Common crop ratios', 'Crop to a common aspect ratio and keep the part of the image that matters.'],
+  ['Target file size', 'Compress toward a file-size limit, then check the resulting size and quality before saving.'],
+  ['JPEG or PNG', 'Choose the output format required by the service you are uploading to.'],
+  ['Preview and inspect', 'Take a closer look at the result so you can judge the trade-off between image quality and file size.'],
+  ['Save or share', 'Save the finished image to your device or share it with an app you choose.'],
+];
+---
+
+<AppLayout
+  title="UploadFit | Exact image upload requirements | AppCrazy Labs"
+  description="Resize, crop and compress images for strict upload requirements with UploadFit. JPEG/PNG output, on-device image processing and no account required."
+  canonicalPath={appPath(uploadfit)}
+  heading={uploadfit.name}
+  kicker="AppCrazy Labs · Image utility"
+  deck={uploadfit.tagline}
+  backLabel={studio.name}
+  backHref={studio.path}
+>
+  <div slot="meta" class="hero-actions">
+    <a class="button button-primary" href="#features">Explore the features ↓</a>
+    <a class="text-link" href="#support">Get support →</a>
+  </div>
+
+  <p>
+    The form wants a particular width, a smaller file and a specific format.
+    Your image is almost right. UploadFit helps you get it ready without the
+    repeated guessing, exporting and trying again.
+  </p>
+  <p>
+    Resize, crop and compress your image, inspect the result, then save or share it.
+    You choose the requirements. UploadFit gives you the tools to work towards them.
+  </p>
+
+  <section id="features" aria-labelledby="features-title">
+    <h2 id="features-title">The right size, shape and format</h2>
+    <dl class="app-features">
+      {features.map(([name, description]) => (
+        <div><dt>{name}</dt><dd>{description}</dd></div>
+      ))}
+    </dl>
+    <p>
+      Always check the receiving service’s requirements and the finished image.
+      Reducing file size can affect quality, and acceptance is determined by the
+      service you submit it to.
+    </p>
+  </section>
+
+  <aside class="note-callout" aria-label="Local image processing">
+    <strong>Your images stay on your device</strong>
+    <p>Image processing happens locally. Your images are not uploaded to our servers, and no account is required.</p>
+  </aside>
+
+  <section aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Local processing, clear privacy</h2>
+    <p>
+      UploadFit processes the images you select on your device. Saving or sharing an image
+      is your choice. If you share it with another app, that app handles the copy you send.
+    </p>
+    <p>
+      UploadFit includes rewarded ads through Google AdMob and an optional one-time
+      lifetime Pro purchase. RevenueCat manages purchase and entitlement information.
+      These services handle advertising or purchase data, not your images.
+    </p>
+    <p>
+      The app currently uses no separate analytics or crash-reporting SDKs.
+      Advertising and purchase services can still process their own usage and technical data.{' '}
+      <a href={`${appPath(uploadfit)}privacy/`}>Read the UploadFit privacy policy →</a>
+    </p>
+  </section>
+  <AppSupport appName={uploadfit.name} />
+</AppLayout>

@@ -1,0 +1,256 @@
+---
+import AppLayout from '../../../../layouts/AppLayout.astro';
+import { uploadfit, appPath, studio, supportLink } from '../../../../data/apps';
+
+const sections = [
+  ['images', 'Images, files and device access'],
+  ['advertising', 'Rewarded ads and Google AdMob'],
+  ['purchases', 'Pro purchases and RevenueCat'],
+  ['support', 'Support messages'],
+  ['sharing', 'How information is used and shared'],
+  ['choices', 'Your choices and privacy rights'],
+  ['retention', 'Retention and deletion'],
+  ['security', 'Security and international processing'],
+  ['children', 'Children’s privacy'],
+  ['changes', 'Changes and contact'],
+];
+---
+
+<AppLayout
+  title="UploadFit Privacy Policy | AppCrazy Labs"
+  description="UploadFit’s privacy policy: on-device image processing, AdMob rewarded ads, RevenueCat purchases, data retention, deletion and privacy contact details."
+  canonicalPath={`${appPath(uploadfit)}privacy/`}
+  heading="UploadFit privacy policy"
+  kicker="AppCrazy Labs · Privacy"
+  backLabel="UploadFit"
+  backHref={appPath(uploadfit)}
+>
+  <div slot="meta" class="note-meta">
+    <span>Effective: <time datetime="2026-10-03">3 October 2026</time></span>
+    <span>Last updated: <time datetime="2026-10-03">3 October 2026</time></span>
+  </div>
+
+  <p class="archive-disclaimer">
+    <strong>Legal developer / publisher:</strong> [To be confirmed: exact developer name shown in Google Play Console].
+    <br />
+    <strong>Privacy contact:</strong> Sidhanshu Udawat, AppCrazy Labs.
+  </p>
+  <p>
+    This policy explains how UploadFit, an image utility offered under the AppCrazy Labs
+    studio brand, handles information when you use the app or contact support.
+    In this policy, “we”, “us” and “our” refer to the developer of UploadFit.
+    For privacy enquiries, contact{' '}
+    <a href={supportLink('UploadFit privacy enquiry')}>{studio.email}</a>.
+  </p>
+  <aside class="note-callout" aria-label="Privacy summary">
+    <strong>The essentials</strong>
+    <p>
+      Your images are processed on your device and are not uploaded to our servers.
+      No UploadFit account is required. AdMob handles advertising data, and RevenueCat
+      handles purchase and entitlement information. Neither service processes your images.
+    </p>
+  </aside>
+  <p>
+    UploadFit currently integrates AdMob and RevenueCat. It does not use a separate
+    analytics or crash-reporting SDK. This does not mean that no data leaves the device:
+    the advertising and purchase services described below have their own data processing.
+  </p>
+
+  <nav class="policy-contents" aria-label="Privacy policy contents">
+    <strong>In this policy</strong>
+    <ol>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ol>
+  </nav>
+
+  <section id="images" aria-labelledby="images-title">
+    <h2 id="images-title">1. Images, files and device access</h2>
+    <p>
+      UploadFit accesses the images you select to resize, crop, compress, convert,
+      preview and save or share them. These operations take place locally on your device.
+      We do not receive or store those images on our servers, and do not send them to
+      AdMob or RevenueCat.
+    </p>
+    <p>
+      The app uses your device’s file selection and storage facilities to open images
+      and save results. Where your operating system requires permission for this access,
+      you control it through its permission prompts and settings.
+      If you choose to share a result, the receiving app or service receives that image
+      and its own privacy policy applies. Device or gallery backups are also governed
+      by your device settings and backup provider.
+    </p>
+  </section>
+
+  <section id="advertising" aria-labelledby="advertising-title">
+    <h2 id="advertising-title">2. Rewarded ads and Google AdMob</h2>
+    <p>
+      UploadFit offers rewarded ads through Google AdMob. Google’s Mobile Ads SDK
+      collects and shares information such as IP addresses, device or advertising
+      identifiers, ad and app interactions, and diagnostic information. An IP address
+      may be used to estimate a general location. Processing depends on SDK settings,
+      device settings, consent and the ad served.
+    </p>
+    <p>
+      Google and its advertising partners use this information to deliver and measure
+      advertising, prevent fraud and maintain their services. Where permitted and
+      consented to, it can also support personalised advertising. Non-personalised ads
+      can still involve data processing for delivery, measurement and fraud prevention.
+      Image contents are not part of this advertising data.
+    </p>
+    <p>
+      Read <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a> and{' '}
+      <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>.
+    </p>
+  </section>
+
+  <section id="purchases" aria-labelledby="purchases-title">
+    <h2 id="purchases-title">3. Pro purchases and RevenueCat</h2>
+    <p>
+      UploadFit offers an optional one-time lifetime Pro purchase. Google Play processes
+      the payment. RevenueCat helps validate purchases and manage access to Pro features,
+      including restoration of eligible purchases.
+    </p>
+    <p>
+      RevenueCat processes purchase history, product and transaction identifiers,
+      purchase tokens or receipts, purchase status and entitlement information. It uses
+      an app user identifier, which can be generated without you creating an account.
+      Technical context such as the app version, platform, locale and currency may
+      accompany these requests.
+    </p>
+    <p>
+      This information supports purchase validation, entitlement management, support,
+      fraud prevention and purchase reporting. RevenueCat does not receive your images.
+      We and RevenueCat do not receive your full payment card details from Google Play.{' '}
+      See <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a> and{' '}
+      <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a> for their practices.
+    </p>
+  </section>
+
+  <section id="support" aria-labelledby="support-title">
+    <h2 id="support-title">4. Support messages</h2>
+    <p>
+      If you email us, we receive your email address, the content of your message and
+      any attachments you choose to send. We use this information to respond, investigate
+      problems and handle privacy or purchase requests. Our email provider processes
+      these messages to deliver and store them.
+    </p>
+    <p>
+      Please do not send sensitive images or payment card details. Sending an image
+      voluntarily to support is separate from the app’s local image processing.
+    </p>
+  </section>
+
+  <section id="sharing" aria-labelledby="sharing-title">
+    <h2 id="sharing-title">5. How information is used and shared</h2>
+    <p>
+      We use information to provide the features you request, manage purchases,
+      respond to support, protect against misuse and meet legal obligations.
+      Recipients include Google for advertising and payments, RevenueCat for purchase
+      management, and our email provider for support. We may also disclose information
+      when legally required or necessary to protect users’ rights and safety.
+    </p>
+    <p>
+      We do not sell your images or support messages. AdMob’s advertising-related
+      sharing is described above. Where data protection law requires a legal basis,
+      processing relies on providing requested services, legitimate interests such as
+      security and support, legal obligations, or consent where required for advertising
+      and device identifiers.
+    </p>
+  </section>
+
+  <section id="choices" aria-labelledby="choices-title">
+    <h2 id="choices-title">6. Your choices and privacy rights</h2>
+    <p>
+      You choose which images to open, what to save or share, and whether to make a Pro
+      purchase. You can manage file permissions and advertising identifier settings
+      through Android, with available controls depending on your device and version.
+      Use any advertising consent or privacy controls presented in the app to express
+      or update your preferences. Where consent is required, you may withdraw it.
+      Contact us if you need help with these choices.
+    </p>
+    <p>
+      Depending on where you live, you may have rights to access, correct, delete or
+      obtain a copy of personal information, restrict or object to processing, and
+      withdraw consent. You may also complain to your local data protection authority.
+      Email <a href={supportLink('UploadFit privacy request')}>{studio.email}</a> to
+      exercise these rights. We may need limited information to verify the request
+      and locate the relevant record. We cannot access images stored only on your device.
+    </p>
+  </section>
+
+  <section id="retention" aria-labelledby="retention-title">
+    <h2 id="retention-title">7. Retention and deletion</h2>
+    <ul>
+      <li>
+        <strong>Images and local app data:</strong> we retain no server copies of images
+        processed in the app. Delete exported files using your gallery or file manager.
+        Android’s clear-storage or uninstall controls remove app-managed local data;
+        exported images and backups may remain until you delete them separately.
+      </li>
+      <li>
+        <strong>Purchase records:</strong> purchase and entitlement records are retained
+        as needed to provide and restore Pro access, resolve disputes, prevent fraud and
+        meet applicable legal requirements. Uninstalling UploadFit does not automatically
+        delete RevenueCat or Google Play records.
+      </li>
+      <li>
+        <strong>Advertising data:</strong> Google and its partners retain advertising data
+        under their own retention policies and the controls they provide.
+      </li>
+      <li>
+        <strong>Support messages:</strong> we keep correspondence only for as long as
+        needed to resolve the request and follow-up issues, or to meet legal obligations,
+        after which it is deleted.
+      </li>
+    </ul>
+    <p>
+      To request deletion of support messages or purchase records we manage through
+      RevenueCat, email <a href={supportLink('UploadFit data deletion request')}>{studio.email}</a>{' '}
+      with the subject “UploadFit data deletion request”. We will explain any information
+      needed to locate your record and any retention required by law. Deleting purchase
+      records may affect our ability to recognise or restore Pro access; it does not
+      itself issue a refund or erase Google Play’s transaction records. Continued use
+      or a purchase restore may create a new RevenueCat record.
+    </p>
+    <p>No UploadFit account is required, so there is no UploadFit account to close.</p>
+  </section>
+
+  <section id="security" aria-labelledby="security-title">
+    <h2 id="security-title">8. Security and international processing</h2>
+    <p>
+      Keeping image processing on your device limits exposure of image contents.
+      AdMob and RevenueCat use encrypted connections for data sent to their services.
+      We limit access to support and purchase information to handling the purposes
+      described in this policy. No storage or transmission method can guarantee
+      absolute security.
+    </p>
+    <p>
+      Google, RevenueCat and our email provider may process information in countries
+      other than your own, including the United States. Their privacy policies describe
+      the safeguards used for international transfers. This does not change where
+      UploadFit processes your images: image operations remain on your device.
+    </p>
+  </section>
+
+  <section id="children" aria-labelledby="children-title">
+    <h2 id="children-title">9. Children’s privacy</h2>
+    <p>
+      UploadFit is a general-purpose image utility and is not specifically directed at
+      children under 13. We do not knowingly collect personal information from children
+      under 13. If you believe a child has provided personal information to us, contact
+      us so we can investigate and arrange appropriate deletion.
+    </p>
+  </section>
+
+  <section id="changes" aria-labelledby="changes-title">
+    <h2 id="changes-title">10. Changes and contact</h2>
+    <p>
+      We may update this policy as UploadFit or its service providers change. The latest
+      version will be published on this page with a revised date. Where required, we
+      will provide additional notice or request consent for material changes.
+    </p>
+    <p>
+      For UploadFit privacy questions, support or deletion requests, email{' '}
+      <a href={supportLink('UploadFit privacy enquiry')}>{studio.email}</a>.
+      You can also use the <a href="/#contact">existing website contact links</a>.
+    </p>
+  </section>
+</AppLayout>

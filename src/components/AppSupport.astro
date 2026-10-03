@@ -1,0 +1,20 @@
+---
+import { studio, supportLink } from '../data/apps';
+interface Props { appName?: string }
+const { appName = studio.name } = Astro.props;
+---
+
+<section id="support" aria-labelledby="support-title">
+  <h2 id="support-title">Support & contact</h2>
+  <p>
+    Need help with {appName}, or have a suggestion? Email{' '}
+    <a href={supportLink(`${appName} support`)}>{studio.email}</a>.
+    You can also reach me through the <a href="/#contact">website’s contact section</a>.
+  </p>
+  {appName !== studio.name && (
+    <p>
+      Include your device model, app version and a short description of what happened.
+      Please avoid sending sensitive images or payment details.
+    </p>
+  )}
+</section>

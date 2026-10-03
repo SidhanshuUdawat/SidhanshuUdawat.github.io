@@ -1,0 +1,94 @@
+/* Extend the existing note layout and archive rows with app-specific details. */
+.app-footer > a:first-child {
+  justify-self: start;
+}
+
+.app-page .note-body {
+  overflow-wrap: anywhere;
+}
+
+.app-page .note-header h1 {
+  max-width: 16ch;
+  overflow-wrap: anywhere;
+}
+
+.app-page .archive-item {
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1.25rem;
+  font-family: var(--sans);
+}
+
+.app-page .archive-item h3 {
+  margin: 0.25rem 0 0.75rem;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.app-page .archive-item p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.app-page .archive-item .writing-type {
+  color: var(--blue);
+  font-size: 0.72rem;
+}
+
+.app-page .archive-item .text-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--blue);
+  font-size: 0.8rem;
+}
+
+.app-page .note-callout {
+  margin-inline: 0;
+}
+
+.app-page .app-features {
+  margin: 1.5rem 0 3rem;
+}
+
+.app-features > div {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.app-features > div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.app-features dt {
+  margin-bottom: 0.4rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.app-features dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.app-page .policy-contents {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.policy-contents ol {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 760px) {
+  .app-page .archive-item {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+}

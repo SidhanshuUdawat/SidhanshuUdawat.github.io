@@ -109,7 +109,11 @@ h3 {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2.5vw, 2.5rem);
+  gap: clamp(1rem, 1.8vw, 2.5rem);
+}
+
+.desktop-nav a {
+  white-space: nowrap;
 }
 
 .site-header nav a,
@@ -136,6 +140,10 @@ h3 {
 }
 
 .mobile-menu {
+  display: none;
+}
+
+.mobile-menu:not([open]) .mobile-nav {
   display: none;
 }
 
@@ -316,6 +324,7 @@ h3 {
 
 .neevflow-section {
   position: relative;
+  overflow: clip;
   background: var(--blue);
   color: white;
 }

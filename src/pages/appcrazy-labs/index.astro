@@ -1,0 +1,47 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro';
+import AppSupport from '../../components/AppSupport.astro';
+import { apps, appPath, studio } from '../../data/apps';
+---
+
+<AppLayout
+  title="AppCrazy Labs | Independent app studio"
+  description={studio.description}
+  canonicalPath={studio.path}
+  heading={studio.name}
+  kicker="Independent app studio"
+  deck="Simple apps. Useful by design."
+  backLabel="Sidhanshu Udawat"
+  backHref="/"
+>
+  <p>
+    AppCrazy Labs is an independent app studio focused on building simple, useful consumer
+    apps and utilities. Each product starts with a specific everyday problem and a clear
+    idea of how to make it easier.
+  </p>
+  <p>
+    The studio’s scope includes productivity utilities, image and document tools,
+    lightweight consumer apps, games and other focused mobile products. UploadFit is
+    the first app in that collection.
+  </p>
+
+  <section aria-labelledby="apps-title">
+    <h2 id="apps-title">Apps from the studio</h2>
+    <div class="archive-list">
+      {apps.map((app, index) => (
+        <a class="archive-item" href={appPath(app)}>
+          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div>
+            <p class="writing-type">{app.category}</p>
+            <h3>{app.name}</h3>
+            <p>{app.tagline}</p>
+            <p>{app.description}</p>
+            <span class="text-link">Explore {app.name} →</span>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <AppSupport />
+</AppLayout>

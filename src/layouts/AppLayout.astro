@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { studio } from '../data/apps';
+import '../styles/apps.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  heading: string;
+  kicker: string;
+  backLabel: string;
+  backHref: string;
+  deck?: string;
+}
+
+const { title, description, canonicalPath, heading, kicker, backLabel, backHref, deck } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <main id="content" class="note-page app-page">
+    <a class="article-back" href={backHref}>← {backLabel}</a>
+    <article>
+      <header class="note-header">
+        <p class="section-kicker">{kicker}</p>
+        <h1>{heading}</h1>
+        {deck && <p class="note-deck">{deck}</p>}
+        <slot name="meta" />
+      </header>
+      <div class="note-body">
+        <slot />
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer app-footer">
+    <a href={studio.path}>{studio.name}</a>
+    <p>Simple, useful apps.</p>
+    <a href="#content">Back to top ↑</a>
+  </footer>
+</BaseLayout>
