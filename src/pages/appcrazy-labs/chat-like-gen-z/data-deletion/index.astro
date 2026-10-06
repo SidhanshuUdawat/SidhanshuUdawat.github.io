@@ -130,6 +130,8 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
       kept for 90 days to block stale requests and record completion. Hourly cleanup removes
       these after the deadline, with possible delays during outages, retries or backlog.
       These periods are operational choices for internal testing, not stated legal mandates.
+      Cloud Logging separately retains default operational logs for 30 days and locked required
+      audit logs for 400 days; account deletion does not remove these platform logs.
     </p>
     <p>
       For active accounts, conversion results and message fingerprints expire after seven
