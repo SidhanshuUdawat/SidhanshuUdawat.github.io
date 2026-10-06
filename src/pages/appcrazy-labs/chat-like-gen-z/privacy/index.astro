@@ -1,0 +1,232 @@
+---
+import AppLayout from '../../../../layouts/AppLayout.astro';
+import { chatLikeGenZ, appPath, studio, supportLink } from '../../../../data/apps';
+
+const path = appPath(chatLikeGenZ);
+const sections = [
+  ['conversions', 'Messages and conversion records'],
+  ['device', 'Information on your device'],
+  ['account', 'Accounts, wallet and recovery'],
+  ['ads', 'Rewarded ads and privacy choices'],
+  ['purchases', 'Google Play test purchases'],
+  ['sharing', 'Purposes and service providers'],
+  ['retention', 'Retention and deletion'],
+  ['security', 'Security and international processing'],
+  ['children', 'Children and changes'],
+];
+---
+
+<AppLayout
+  title="Chat Like Gen Z Privacy Policy | AppCrazy Labs"
+  description="How Chat Like Gen Z handles conversion text, Gemini processing, Firebase wallet records, Google sign-in, test ads and purchases, retention and deletion requests."
+  canonicalPath={`${path}privacy/`}
+  heading="Chat Like Gen Z privacy policy"
+  kicker="AppCrazy Labs · Privacy"
+  backLabel={chatLikeGenZ.name}
+  backHref={path}
+>
+  <div slot="meta" class="note-meta">
+    <span>Effective: <time datetime="2026-10-06">6 October 2026</time></span>
+    <span>Last updated: <time datetime="2026-10-06">6 October 2026</time></span>
+  </div>
+
+  <p class="archive-disclaimer">
+    <strong>App:</strong> Chat Like Gen Z, an AppCrazy Labs product<br />
+    <strong>Legal developer / publisher:</strong> Sidhanshu Udawat<br />
+    <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={`mailto:${studio.email}`}>{studio.email}</a>
+  </p>
+  <p>
+    This policy describes the current Android internal-test version of Chat Like Gen Z.
+    In this policy, “we” means the developer named above. The app is not publicly
+    available on Google Play yet. Advertising and purchases are test-only in this
+    version, and some account-deletion work is not complete. We will update this
+    page before broader release if the app or its data practices change.
+  </p>
+  <aside class="note-callout" aria-label="Privacy summary">
+    <strong>Your words are processed remotely</strong>
+    <p>
+      Android conversions send the text you submit to a Firebase backend and Google
+      Gemini. Encode also sends the writing preferences you choose. A generated result
+      and conversion metadata are stored with your wallet record. Do not enter private
+      information that you would not want processed by these services.
+    </p>
+  </aside>
+
+  <nav class="policy-contents" aria-label="Privacy policy contents">
+    <strong>In this policy</strong>
+    <ol>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ol>
+  </nav>
+
+  <section id="conversions" aria-labelledby="conversions-title">
+    <h2 id="conversions-title">1. Messages and conversion records</h2>
+    <p>
+      When you request an encode or decode, the text you enter goes through an
+      authenticated Firebase Cloud Function to Google Gemini for a generated answer.
+      For encode, the request can also include your chosen writing style and optional
+      age range, identity and pronouns. Decode does not send those preferences.
+      Google processes the request to produce the answer. AI answers can be inaccurate.
+    </p>
+    <p>
+      The Firebase wallet stores a conversion operation under your account identifier.
+      Its record contains the request ID, status, timing information, a fingerprint
+      derived from the submitted text and preferences, and the generated result on
+      success. The current operation record does not save the plaintext input, but
+      the input is transmitted to the backend and AI service. The fingerprint helps
+      prevent a request ID being reused for different content. We do not claim that
+      conversion text is processed only on your device or that no message data is stored.
+    </p>
+  </section>
+
+  <section id="device" aria-labelledby="device-title">
+    <h2 id="device-title">2. Information on your device</h2>
+    <p>
+      The app saves your writing profile locally, including any age range,
+      identity, pronouns and style you select. It also uses local storage for
+      a pending conversion request and the most recent completed input and result,
+      so an interrupted request can be recovered without charging twice. A pending
+      request can include your message and encode preferences. Reward-test state
+      may also be kept locally while a reward is being checked.
+    </p>
+    <p>
+      Clearing the app’s storage or uninstalling it removes app-managed local data
+      on that device. Text you copy or share goes to the destination you choose;
+      that destination’s privacy practices then apply. Device backups may retain
+      copies under your device or backup-provider settings.
+    </p>
+  </section>
+
+  <section id="account" aria-labelledby="account-title">
+    <h2 id="account-title">3. Accounts, wallet and recovery</h2>
+    <p>
+      You can start without Google sign-in. Firebase Authentication creates an
+      anonymous account identifier, shown in the app as a Support ID, so a remote
+      wallet can track your conversion balance. A new guest wallet starts with 10
+      conversions; successful new conversions use one, while failed or cancelled
+      requests return their reserved credit. Uninstalling an unlinked guest account
+      can mean losing access to its balance, but does not itself delete server data.
+    </p>
+    <p>
+      You may link a Google account to preserve or recover a wallet. Firebase
+      Authentication then receives account details such as your Google identifier,
+      email and basic profile information. If that Google account already has a
+      wallet, restoring it switches to that wallet; balances are not combined.
+      Google sign-in is required before test-pack checkout, not for free conversions.
+      Firebase App Check, using Android integrity signals, helps protect backend
+      requests from abuse. It does not make submitted text end-to-end encrypted.
+    </p>
+  </section>
+
+  <section id="ads" aria-labelledby="ads-title">
+    <h2 id="ads-title">4. Rewarded ads and privacy choices</h2>
+    <p>
+      The test build offers optional Google AdMob rewarded ads. A verified completed
+      ad is intended to add three conversions after our server checks Google’s signed
+      confirmation. The app also has demo ads that add no credits. Owned-unit ad
+      completion and the full consent flow have not yet been verified on the test phone;
+      live public ads are disabled.
+    </p>
+    <p>
+      Google’s Mobile Ads SDK and User Messaging Platform (UMP) can process IP address,
+      device or advertising identifiers, approximate location inferred from IP,
+      ad interactions and diagnostics for ad delivery, measurement, security and
+      consent management. The test configuration requests non-personalized, G-rated
+      ads and applies under-age treatment to selected age groups. It does not request
+      precise location. The app requests consent where required before loading ads
+      and offers Settings → Ad privacy choices when a privacy-options form is required
+      and available. A Console consent message still needs configuration and testing.
+      See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section id="purchases" aria-labelledby="purchases-title">
+    <h2 id="purchases-title">5. Google Play test purchases</h2>
+    <p>
+      Google Play test billing offers consumable packs of 100, 200 or 300 conversions
+      to approved internal testers. There are no public live sales in this version.
+      The app sends product and purchase identifiers to our backend, which checks
+      the purchase and account association with Google Play before adding credits.
+      We store wallet balances, grant records and billing-account mappings to
+      reconcile purchases and avoid duplicate credits. Google Play handles payment;
+      AppCrazy Labs does not receive your full payment-card details. Google controls
+      its own purchase history. No subscription, lifetime Pro or RevenueCat service
+      is used for this app.
+    </p>
+  </section>
+
+  <section id="sharing" aria-labelledby="sharing-title">
+    <h2 id="sharing-title">6. Purposes and service providers</h2>
+    <p>
+      We use the information above to produce conversions, personalize encodes,
+      recover results and balances, verify credits and test purchases, prevent misuse,
+      respond to support and comply with legal obligations. Relevant providers are
+      Google Firebase (Authentication, Cloud Functions, Firestore and App Check),
+      Google Gemini through Vertex AI, Google AdMob and UMP for test ads, Google Play
+      for test billing, and our email provider when you contact support. We may also
+      disclose information when legally required. We do not use a separate analytics
+      or crash-reporting SDK in the inspected test build.
+    </p>
+    <p>
+      If you contact us, we receive your email address, message and any attachments
+      you choose to send. Please do not email passwords, payment-card details or
+      sensitive message text. See also Google’s <a href="https://policies.google.com/privacy">privacy information</a>
+      {' '}for its services.
+    </p>
+  </section>
+
+  <section id="retention" aria-labelledby="retention-title">
+    <h2 id="retention-title">7. Retention and deletion</h2>
+    <p>
+      Conversion records currently carry a deletion timestamp set for seven days
+      after creation, but the Firestore automatic-deletion policy has not been enabled.
+      <strong>Seven days is not a verified deletion period.</strong> We cannot confirm
+      an automatic retention period for conversion results, wallets, grants, billing
+      mappings, reward tickets or support correspondence. Firebase account records
+      remain until deleted. Google and our email provider apply their own retention
+      practices to information they control.
+    </p>
+    <p>
+      You can request account and associated data deletion without signing in through
+      the <a href={`${path}data-deletion/`}>Chat Like Gen Z data-deletion page</a>.
+      The current in-app deletion option opens an email request; it does not perform
+      automatic deletion. A complete server-side deletion process and any exceptions
+      for transaction, fraud, accounting or legal records still need implementation
+      and verification. We will not represent the request option as completed deletion.
+      Google Play retains and manages its own purchase records separately.
+    </p>
+    <p>
+      Depending on your location, you may have rights to access, correct or delete
+      personal information, or object to or restrict processing. Email{' '}
+      <a href={supportLink('Chat Like Gen Z privacy request')}>{studio.email}</a>
+      {' '}with your Support ID if you have it. We may ask for limited information
+      to verify ownership before acting on a request.
+    </p>
+  </section>
+
+  <section id="security" aria-labelledby="security-title">
+    <h2 id="security-title">8. Security and international processing</h2>
+    <p>
+      Backend requests use encrypted connections, Firebase Authentication and App
+      Check; the app cannot directly edit the server wallet. This limits some risks
+      but does not guarantee absolute security. Submitted text is visible to the
+      backend and AI service for processing, so it is not end-to-end encrypted.
+      Google services and our email provider may process information outside your
+      country, including the United States, subject to their policies and applicable
+      safeguards.
+    </p>
+  </section>
+
+  <section id="children" aria-labelledby="children-title">
+    <h2 id="children-title">9. Children and changes</h2>
+    <p>
+      Chat Like Gen Z is not directed at children under 13. Its profile includes
+      a 13–17 age range, so some users may be teenagers. If you believe a child
+      under 13 has supplied personal information, contact us so we can investigate.
+    </p>
+    <p>
+      We may revise this policy when the app, providers or test configuration change.
+      The new version will appear here with an updated date. For privacy questions,
+      contact Sidhanshu Udawat at{' '}
+      <a href={supportLink('Chat Like Gen Z privacy enquiry')}>{studio.email}</a>.
+    </p>
+  </section>
+</AppLayout>
