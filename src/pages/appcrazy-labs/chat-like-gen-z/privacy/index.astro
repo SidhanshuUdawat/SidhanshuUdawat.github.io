@@ -39,7 +39,7 @@ const sections = [
     This policy describes the current Android internal-test version of Chat Like Gen Z.
     In this policy, “we” means the developer named above. The app is not publicly
     available on Google Play yet. Advertising and purchases are test-only in this
-    version, and some account-deletion work is not complete. We will update this
+    version. Confirmed in-app deletion is available in internal build 8 and later. We will update this
     page before broader release if the app or its data practices change.
   </p>
   <aside class="note-callout" aria-label="Privacy summary">
@@ -176,22 +176,53 @@ const sections = [
   <section id="retention" aria-labelledby="retention-title">
     <h2 id="retention-title">7. Retention and deletion</h2>
     <p>
-      Conversion records currently carry a deletion timestamp set for seven days
-      after creation, but the Firestore automatic-deletion policy has not been enabled.
-      <strong>Seven days is not a verified deletion period.</strong> We cannot confirm
-      an automatic retention period for conversion results, wallets, grants, billing
-      mappings, reward tickets or support correspondence. Firebase account records
-      remain until deleted. Google and our email provider apply their own retention
-      practices to information they control.
+      Server conversion results and the fingerprint derived from submitted content expire
+      seven days after creation. The backend stops returning expired results and removes
+      them on access. An hourly cleanup job also removes expired results and fingerprints;
+      physical cleanup can be delayed by retries, outages or a processing backlog. This is
+      not a promise that every physical copy disappears exactly at seven days. Active
+      requests are allowed to settle or time out safely before cleanup. Minimal request IDs,
+      status and timing metadata remain with the wallet until account deletion to prevent
+      old retries from spending a conversion again. This mechanism does not use Firestore
+      TTL to delete entire conversion records.
     </p>
     <p>
-      You can request account and associated data deletion without signing in through
-      the <a href={`${path}data-deletion/`}>Chat Like Gen Z data-deletion page</a>.
-      The current in-app deletion option opens an email request; it does not perform
-      automatic deletion. A complete server-side deletion process and any exceptions
-      for transaction, fraud, accounting or legal records still need implementation
-      and verification. We will not represent the request option as completed deletion.
-      Google Play retains and manages its own purchase records separately.
+      Firebase account, wallet, linked Google identity, billing mappings and active-account
+      credit records remain while the account exists. Expired reward tickets are cleaned
+      after an additional day for reconciliation. Your latest input/result and writing
+      profile can remain on your device until replaced or cleared; the server's seven-day
+      rule does not erase local copies, screenshots, shared text or device backups.
+    </p>
+    <p>
+      In internal build 8 and later, use <strong>Settings → Delete account &amp; data</strong>.
+      Confirm Google sign-in again if linked, then confirm permanent deletion. The server
+      closes the account immediately, blocks new wallet writes, removes the Firebase Auth
+      account and Google link, wallet, conversion records, billing mappings and reward
+      tickets. Interrupted cleanup retries hourly. This also removes unused purchased
+      conversions and does not request a Google Play refund. The Google account itself is
+      not deleted. The app clears app-managed personal data on the requesting phone and
+      attempts to revoke its Google sign-in access. Other/offline devices and backups may
+      need local cleanup or removal through their own settings.
+    </p>
+    <p>
+      After deletion, transaction-token digests with pack/reward type, amount, timing and
+      reversal status, but without your Firebase account ID, email, Google identity or
+      messages, remain for 180 days to prevent duplicate credits and reconcile refunds.
+      A hashed account-deletion receipt remains for 90 days to block stale requests and
+      record completion. Hourly cleanup removes these records after their retention
+      deadlines, subject to the same operational delays. These are the current test app's
+      operational retention periods, not a claim that a law requires this duration.
+      Google Play controls its own purchase history. Cloud service logs and data held by
+      Google, Gemini, AdMob and our email provider follow their separate retention practices.
+    </p>
+    <p>
+      You can also request deletion without signing in through the
+      <a href={`${path}data-deletion/`}>Chat Like Gen Z data-deletion page</a>.
+      Support verifies ownership before processing; knowing a Support ID alone is not enough.
+      Email requests are reviewed manually and sending one does not immediately delete an
+      account. Support correspondence is separate from the automated account cleanup; ask
+      for its deletion too if desired. We will explain any specific legal hold before retaining
+      requested correspondence. No fixed support completion time is promised.
     </p>
     <p>
       Depending on your location, you may have rights to access, correct or delete

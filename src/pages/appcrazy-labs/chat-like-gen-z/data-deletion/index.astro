@@ -58,66 +58,88 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
     </p>
   </section>
 
-  <aside class="note-callout" aria-label="Current deletion status">
-    <strong>A request is not automatic deletion</strong>
+  <aside class="note-callout" aria-label="Account deletion options">
+    <strong>Delete in the app, or ask support without signing in</strong>
     <p>
-      The app has a Settings → Request account &amp; data deletion option in its
-      managed-wallet test build. It opens an email draft, not an in-app account
-      erasure operation. A complete support-side process for deleting the Firebase
-      account and all associated server records has not yet been implemented and
-      verified. We cannot promise that sending the request immediately removes them.
+      Internal build 8 and later has <strong>Settings → Delete account &amp; data</strong>.
+      Confirm your linked Google sign-in, if applicable, and then permanent deletion.
+      This removes access to your account and unused conversions, including purchased
+      conversions. It is irreversible and does not issue a Google Play refund. Older builds
+      open an email draft; update or use the email request above.
     </p>
   </aside>
-
-  <section aria-labelledby="records-title">
-    <h2 id="records-title">What the request needs to cover</h2>
+  <section aria-labelledby="verification-title">
+    <h2 id="verification-title">How support verifies a request</h2>
     <p>
-      The records associated with a Support ID can include the Firebase
-      Authentication account, wallet balance, conversion-operation records
-      (including generated results), credit grants, billing-account mappings,
-      reward tickets and related verification records. If you linked Google,
-      the Firebase account can also include your Google account identifier,
-      email and basic profile. Support emails and attachments you sent us
-      are a separate category.
+      For a linked account, support sends a one-time confirmation challenge to the verified
+      Google email already registered on the Firebase account. Reply to that challenge with
+      the code and explicit deletion confirmation. A supplied Support ID or an email From
+      header alone is not proof of ownership. If you have no Support ID, support can locate
+      the linked account using that verified email. The challenge expires after 24 hours.
     </p>
     <p>
-      We will review those categories when responding, but the current backend
-      has no verified complete account-deletion workflow. Deleting only the
-      Firebase sign-in account would leave associated Firestore records behind.
-      Until a verified process is in place, we cannot claim that every category
-      will be erased on request. See the <a href={`${path}privacy/#retention`}>retention section of the privacy policy</a>
-      {' '}for the current storage status.
+      For an unlinked guest, use deletion from the signed-in app on the original device.
+      If you have lost that device/session, support will discuss whether ownership can be
+      safely established; a guest Support ID alone does not authorize deletion. We will not
+      delete another person's records or ask for passwords, private tokens or identity papers.
     </p>
   </section>
-
+  <section aria-labelledby="records-title">
+    <h2 id="records-title">What is deleted</h2>
+    <p>
+      A confirmed request immediately blocks new conversions and grants on that account.
+      Cleanup deletes the Firebase Authentication account and its Google identity link,
+      wallet and balance, conversion records/results, pending requests, billing-account
+      mappings, reward tickets and reward limits. Cleanup retries hourly if interrupted.
+      Signing in to Google afterward cannot recover the deleted wallet; a new account can
+      receive only its own new guest allowance. Your Google account itself stays intact.
+    </p>
+    <p>
+      Support emails and attachments are handled separately. Say if you want those removed
+      too; support removes matching correspondence after ownership verification and reports
+      any specific retention exception. Email-provider backups and Google-managed transaction
+      history are outside the app's account cleanup. Support replies with completion status;
+      no fixed completion time for manual requests is promised.
+    </p>
+  </section>
   <section aria-labelledby="device-title">
     <h2 id="device-title">Data on your device</h2>
     <p>
-      Android’s clear-storage control or uninstalling the app removes its local
-      writing profile, pending conversion and recent result from that device.
-      Copies you sent to other apps, screenshots and device backups may remain
-      until you remove them there. Clearing local data does not delete the
-      Firebase account, remote wallet or conversion records. An unlinked guest
-      account may then be difficult to identify, so save your Support ID first
-      if you plan to request server-data deletion.
+      In-app deletion clears the writing profile, pending conversion input, recent saved
+      input/result and pending reward state on the requesting phone, signs out Firebase,
+      and attempts to revoke the app's Google sign-in access. This does not delete your
+      Google account. If you requested deletion by email, or used other/offline devices,
+      clear the app's storage on those devices to remove local copies. You can also remove
+      Chat Like Gen Z from your Google Account's third-party connections if access remains.
+    </p>
+    <p>
+      Uninstalling or clearing storage alone does not delete server data. Device backups,
+      screenshots and text copied/shared to other apps may remain under their own controls.
+      Never uninstall merely to request deletion; an unlinked guest may lose the ability
+      to prove ownership. The app retains a local deletion-completion marker so it does not
+      silently reopen the closed wallet; you may explicitly start a new guest account.
     </p>
   </section>
-
   <section aria-labelledby="retention-title">
-    <h2 id="retention-title">Records that may need to remain</h2>
+    <h2 id="retention-title">What is retained, and for how long</h2>
     <p>
-      Some purchase and credit records may need to be retained for transaction
-      integrity, fraud prevention, accounting, disputes or legal obligations.
-      The current app is limited to internal test purchases; Google Play controls
-      its own transaction and payment history, which a request to us cannot erase.
-      Google also controls data processed by AdMob and Gemini under its own policies.
+      After deletion, minimal purchase/reward records retain the transaction-token digest,
+      pack/reward type, amount, timing and reversal status for 180 days. The Firebase UID,
+      email, Google identity, ticket nonce and message data are removed. This supports
+      duplicate-credit prevention and refund reconciliation. A hashed deletion receipt is
+      kept for 90 days to block stale requests and record completion. Hourly cleanup removes
+      these after the deadline, with possible delays during outages, retries or backlog.
+      These periods are operational choices for internal testing, not stated legal mandates.
     </p>
     <p>
-      No verified retention period or complete exception schedule exists yet for
-      the app’s server records. Conversion records have a seven-day deletion marker,
-      but Firestore automatic deletion is not enabled, so that marker is not a
-      seven-day deletion promise. If a record must remain after a request, we will
-      explain the reason and the applicable duration or criteria when known.
+      For active accounts, conversion results and message fingerprints expire after seven
+      days; the backend removes them on access and an hourly job performs physical cleanup.
+      Minimal request/status records remain until account deletion to prevent duplicate
+      deductions. Active pending requests settle or time out before cleanup. This does not
+      promise physical deletion at exactly seven days. See the
+      <a href={`${path}privacy/#retention`}>privacy policy</a> for local copies and service logs.
+      Google Play, AdMob and Gemini manage data under their own policies; app deletion cannot
+      erase Google's independent purchase or service records.
     </p>
   </section>
 
