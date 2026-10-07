@@ -8,7 +8,7 @@ const sections = [
   ['device', 'Information on your device'],
   ['account', 'Accounts, wallet and recovery'],
   ['ads', 'Rewarded ads and privacy choices'],
-  ['purchases', 'Google Play test purchases'],
+  ['purchases', 'Google Play purchases'],
   ['sharing', 'Purposes and service providers'],
   ['retention', 'Retention and deletion'],
   ['security', 'Security and international processing'],
@@ -18,7 +18,7 @@ const sections = [
 
 <AppLayout
   title="Chat Like Gen Z Privacy Policy | AppCrazy Labs"
-  description="How Chat Like Gen Z handles conversion text, Gemini processing, Firebase wallet records, Google sign-in, test ads and purchases, retention and deletion requests."
+  description="How Chat Like Gen Z handles conversion text, Gemini processing, Firebase wallet records, Google sign-in, rewarded ads and purchases, retention and deletion requests."
   canonicalPath={`${path}privacy/`}
   heading="Chat Like Gen Z privacy policy"
   kicker="AppCrazy Labs · Privacy"
@@ -27,7 +27,7 @@ const sections = [
 >
   <div slot="meta" class="note-meta">
     <span>Effective: <time datetime="2026-10-06">6 October 2026</time></span>
-    <span>Last updated: <time datetime="2026-10-07">7 October 2026</time></span>
+    <span>Last updated: <time datetime="2026-10-08">8 October 2026</time></span>
   </div>
 
   <p class="archive-disclaimer">
@@ -36,10 +36,12 @@ const sections = [
     <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={`mailto:${studio.email}`}>{studio.email}</a>
   </p>
   <p>
-    <strong>Current availability:</strong> Chat Like Gen Z is in Google Play internal
-    testing, not publicly available. Purchases and ads are restricted to testing;
-    live public ads and unrestricted purchases are not enabled. In this policy,
-    “we” means the developer named above.
+    <strong>Current availability:</strong> As of 8 October 2026, the Android build
+    (versionCode 17) is available to testers on Google Play’s Internal testing track.
+    It has not been submitted for production review and is not publicly available yet.
+    Future installation depends on Google Play release tracks and regions; checkout
+    and rewarded ads also depend on service availability and applicable privacy
+    choices. In this policy, “we” means the developer named above.
   </p>
   <aside class="note-callout" aria-label="Privacy summary">
     <strong>Your words are processed remotely</strong>
@@ -93,7 +95,7 @@ const sections = [
       identity, pronouns and style you select. It also uses local storage for
       a pending conversion request and the most recent completed input and result,
       so an interrupted request can be recovered without charging twice. A pending
-      request can include your message and encode preferences. Reward-test state
+      request can include your message and encode preferences. Pending reward state
       may also be kept locally while a reward is being checked.
     </p>
     <p>
@@ -119,7 +121,7 @@ const sections = [
       Authentication then receives account details such as your Google identifier,
       email and basic profile information. If that Google account already has a
       wallet, restoring it switches to that wallet; balances are not combined.
-      Google sign-in is required before test-pack checkout, not for free conversions.
+      Google sign-in is required before pack checkout, not for free conversions.
       Firebase App Check, using Android integrity signals, helps protect backend
       requests from abuse. It does not make submitted text end-to-end encrypted.
     </p>
@@ -128,31 +130,37 @@ const sections = [
   <section id="ads" aria-labelledby="ads-title">
     <h2 id="ads-title">4. Rewarded ads and privacy choices</h2>
     <p>
-      The test build offers optional Google AdMob rewarded ads. A verified completed
-      ad adds three conversions after our server checks Google’s signed confirmation.
-      Owned-unit test-ad completion and duplicate-callback protection have been verified
-      on the internal-test phone. Demo ads add no credits. Live public ads remain disabled;
-      early-close and regional consent testing are still in progress.
+      The app offers optional Google AdMob rewarded ads where available. Completing an
+      ad grants three conversions only after our server verifies Google’s signed
+      confirmation. Opening, skipping or failing an ad does not grant credits.
+      Each verified ad transaction can grant credits only once, so a repeated callback
+      adds nothing. If verification is delayed, the app can check for the reward
+      without requiring you to watch another ad. Registered AdMob test devices
+      receive test ads; a demo ad without server verification grants no credits.
     </p>
     <p>
       Google’s Mobile Ads SDK and User Messaging Platform (UMP) can process IP address,
       device or advertising identifiers, approximate location inferred from IP,
       ad interactions and diagnostics for ad delivery, measurement, security and
-      consent management. The test configuration requests non-personalized, G-rated
+      consent management. The app requests non-personalized, G-rated
       ads and applies under-age treatment to selected age groups. It does not request
       precise location. The app requests consent where required before loading ads
       and offers Settings → Ad privacy choices when a privacy-options form is required
-      and available. The European consent message is published for this app. Regional
-      consent, refusal and reopening of privacy choices still need phone verification.
+      and available. Which consent forms appear depends on region and AdMob
+      configuration. The European consent message is published, but not every
+      regional consent, refusal and privacy-options flow has been verified.
       See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.
     </p>
   </section>
 
   <section id="purchases" aria-labelledby="purchases-title">
-    <h2 id="purchases-title">5. Google Play test purchases</h2>
+    <h2 id="purchases-title">5. Google Play purchases</h2>
     <p>
-      Google Play test billing offers consumable packs of 100, 200 or 300 conversions
-      to approved internal testers. There are no public live sales in this version.
+      The app offers optional consumable packs of 100, 200 or 300 conversions
+      through Google Play when checkout is available. It displays the localized
+      prices supplied by Google Play before checkout. Registered license testers
+      can still use Google Play test instruments; production-capable billing does
+      not mean the app has already launched publicly.
       The app sends product and purchase identifiers to our backend, which checks
       the purchase and account association with Google Play before adding credits.
       We store wallet balances, grant records and billing-account mappings to
@@ -175,14 +183,14 @@ const sections = [
     <h2 id="sharing-title">6. Purposes and service providers</h2>
     <p>
       We use the information above to produce conversions, personalize encodes,
-      recover results and balances, verify credits and test purchases, prevent misuse,
+      recover results and balances, verify credits and purchases, prevent misuse,
       respond to support and comply with legal obligations. We also review AI-result
       reports to investigate safety concerns and improve safeguards. Relevant providers are
       Google Firebase (Authentication, Cloud Functions, Firestore and App Check),
-      Google Gemini through Vertex AI, Google AdMob and UMP for test ads, Google Play
-      for test billing, and our email provider when you contact support. We may also
+      Google Gemini through Vertex AI, Google AdMob and UMP for rewarded ads, Google Play
+      for billing, and our email provider when you contact support. We may also
       disclose information when legally required. We do not use a separate analytics
-      or crash-reporting SDK in the inspected test build.
+      or crash-reporting SDK in the current Android candidate.
     </p>
     <p>
       If you contact us, we receive your email address, message and any attachments
@@ -240,7 +248,7 @@ const sections = [
       messages, remain for 180 days to prevent duplicate credits and reconcile refunds.
       A hashed account-deletion receipt remains for 90 days to block stale requests and
       record completion. Hourly cleanup removes these records after their retention
-      deadlines, subject to the same operational delays. These are the current test app's
+      deadlines, subject to the same operational delays. These are the app’s
       operational retention periods, not a claim that a law requires this duration.
       Google Play controls its own purchase history. The configured Cloud Logging buckets
       retain default operational logs for 30 days and required audit logs for 400 days; the
@@ -288,7 +296,7 @@ const sections = [
       under 13 has supplied personal information, contact us so we can investigate.
     </p>
     <p>
-      We may revise this policy when the app, providers or test configuration change.
+      We may revise this policy when the app, providers or configuration change.
       The new version will appear here with an updated date. For privacy questions,
       contact Sidhanshu Udawat at{' '}
       <a href={supportLink('Chat Like Gen Z privacy enquiry')}>{studio.email}</a>.
