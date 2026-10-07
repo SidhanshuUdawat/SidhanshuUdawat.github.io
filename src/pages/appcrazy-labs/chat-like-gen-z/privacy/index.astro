@@ -27,7 +27,7 @@ const sections = [
 >
   <div slot="meta" class="note-meta">
     <span>Effective: <time datetime="2026-10-06">6 October 2026</time></span>
-    <span>Last updated: <time datetime="2026-10-06">6 October 2026</time></span>
+    <span>Last updated: <time datetime="2026-10-07">7 October 2026</time></span>
   </div>
 
   <p class="archive-disclaimer">
@@ -36,11 +36,10 @@ const sections = [
     <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={`mailto:${studio.email}`}>{studio.email}</a>
   </p>
   <p>
-    This policy describes the current Android internal-test version of Chat Like Gen Z.
-    In this policy, “we” means the developer named above. The app is not publicly
-    available on Google Play yet. Advertising and purchases are test-only in this
-    version. Confirmed in-app deletion is available in internal build 8 and later. We will update this
-    page before broader release if the app or its data practices change.
+    <strong>Current availability:</strong> Chat Like Gen Z is in Google Play internal
+    testing, not publicly available. Purchases and ads are restricted to testing;
+    live public ads and unrestricted purchases are not enabled. In this policy,
+    “we” means the developer named above.
   </p>
   <aside class="note-callout" aria-label="Privacy summary">
     <strong>Your words are processed remotely</strong>
@@ -74,6 +73,16 @@ const sections = [
       the input is transmitted to the backend and AI service. The fingerprint helps
       prevent a request ID being reused for different content. We do not claim that
       conversion text is processed only on your device or that no message data is stored.
+    </p>
+    <p>
+      In versions that include <strong>Report result</strong>, you can flag an
+      inappropriate encode or decode result in the app by choosing a predefined
+      reason. There is no free-text report field. Guests can report, and reporting
+      uses no conversions. The report adds the reason, selected result or tone
+      identifier, report timestamp and review status to the existing conversion
+      record for your account. It goes to the developer, not automatically to Google.
+      Reporting does not send your original message again or store another copy
+      of the generated result.
     </p>
   </section>
 
@@ -158,7 +167,8 @@ const sections = [
     <p>
       We use the information above to produce conversions, personalize encodes,
       recover results and balances, verify credits and test purchases, prevent misuse,
-      respond to support and comply with legal obligations. Relevant providers are
+      respond to support and comply with legal obligations. We also review AI-result
+      reports to investigate safety concerns and improve safeguards. Relevant providers are
       Google Firebase (Authentication, Cloud Functions, Firestore and App Check),
       Google Gemini through Vertex AI, Google AdMob and UMP for test ads, Google Play
       for test billing, and our email provider when you contact support. We may also
@@ -187,6 +197,13 @@ const sections = [
       TTL to delete entire conversion records.
     </p>
     <p>
+      Reporting does not extend the seven-day expiry of server result text. After
+      that text expires, the reason, selected result or tone identifier, report
+      timestamp and review status can remain with the conversion record until
+      account deletion. Deleting the account removes this report metadata with
+      the conversion records.
+    </p>
+    <p>
       Firebase account, wallet, linked Google identity, billing mappings and active-account
       credit records remain while the account exists. Expired reward tickets are cleaned
       after an additional day for reconciliation. Your latest input/result and writing
@@ -194,7 +211,7 @@ const sections = [
       rule does not erase local copies, screenshots, shared text or device backups.
     </p>
     <p>
-      In internal build 8 and later, use <strong>Settings → Delete account &amp; data</strong>.
+      In the app, open <strong>Settings → Account → Delete account &amp; data</strong>.
       Confirm Google sign-in again if linked, then confirm permanent deletion. The server
       closes the account immediately, blocks new wallet writes, removes the Firebase Auth
       account and Google link, wallet, conversion records, billing mappings and reward
@@ -203,6 +220,10 @@ const sections = [
       not deleted. The app clears app-managed personal data on the requesting phone and
       attempts to revoke its Google sign-in access. Other/offline devices and backups may
       need local cleanup or removal through their own settings.
+    </p>
+    <p>
+      If your installed version does not show the deletion action, update the app
+      or use the email request process below.
     </p>
     <p>
       After deletion, transaction-token digests with pack/reward type, amount, timing and
@@ -225,7 +246,8 @@ const sections = [
       Email requests are reviewed manually and sending one does not immediately delete an
       account. Support correspondence is separate from the automated account cleanup; ask
       for its deletion too if desired. We will explain any specific legal hold before retaining
-      requested correspondence. No fixed support completion time is promised.
+      requested correspondence. We cannot guarantee a response or completion time
+      for manual requests.
     </p>
     <p>
       Depending on your location, you may have rights to access, correct or delete

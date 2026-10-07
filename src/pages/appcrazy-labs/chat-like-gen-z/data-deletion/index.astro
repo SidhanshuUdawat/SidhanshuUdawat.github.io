@@ -22,10 +22,15 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
   </div>
 
   <p>
-    <strong>Chat Like Gen Z is developed by Sidhanshu Udawat under the AppCrazy Labs brand.</strong>
-    The Android test app creates an anonymous Firebase account for your conversion
-    balance, even if you do not link Google. You can start a deletion request from
-    this page without opening the app or signing in.
+    <strong>Chat Like Gen Z is developed by Sidhanshu Udawat under the AppCrazy Labs brand.</strong>{' '}
+    The app creates an anonymous Firebase account for your conversion balance,
+    even if you do not link Google. You can start a deletion request from this
+    page without opening the app or signing in.
+  </p>
+  <p>
+    <strong>Current availability:</strong> Chat Like Gen Z is in Google Play internal
+    testing, not publicly available. Purchases and ads are restricted to testing;
+    live public ads and unrestricted purchases are not enabled.
   </p>
 
   <section id="request" aria-labelledby="request-title">
@@ -36,10 +41,11 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
         “Chat Like Gen Z account and data deletion”. The button above opens a draft.
       </li>
       <li>
-        Include your Support ID if you have it. In the current Android test build,
-        find it at <strong>Settings → Save or recover balance</strong>, under
-        “Support / test account ID”. If you linked Google, also tell us the email
-        address used for that link, preferably by writing from that address.
+        Include your Support ID if you have it. Find it at
+        <strong>Settings → Account → Support ID</strong> and use
+        <strong>Copy Support ID</strong> on the Account screen. If you linked Google,
+        also tell us the email address used for that link, preferably by writing
+        from that address.
       </li>
       <li>
         Say whether you want your app account and associated records deleted,
@@ -52,20 +58,21 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
       Do not send your password, payment-card number, purchase token, Firebase
       credential, private message text or identity documents. We may request
       limited additional information to confirm that the account belongs to you.
-      We will reply with the status, any verification needed, what can be removed
-      and any records that must be retained. No fixed completion time has been
-      verified for the current test process.
+      We review requests manually and explain the status, any verification needed,
+      what can be removed and any records that must be retained when we reply.
+      We cannot guarantee when we will reply or finish processing a request.
     </p>
   </section>
 
   <aside class="note-callout" aria-label="Account deletion options">
     <strong>Delete in the app, or ask support without signing in</strong>
     <p>
-      Internal build 8 and later has <strong>Settings → Delete account &amp; data</strong>.
+      In the app, open <strong>Settings → Account → Delete account &amp; data</strong>.
       Confirm your linked Google sign-in, if applicable, and then permanent deletion.
       This removes access to your account and unused conversions, including purchased
-      conversions. It is irreversible and does not issue a Google Play refund. Older builds
-      open an email draft; update or use the email request above.
+      conversions. It is irreversible and does not request a Google Play refund. If
+      your installed version lacks this action, update the app or use the email
+      request above.
     </p>
   </aside>
   <section aria-labelledby="verification-title">
@@ -89,8 +96,9 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
     <p>
       A confirmed request immediately blocks new conversions and grants on that account.
       Cleanup deletes the Firebase Authentication account and its Google identity link,
-      wallet and balance, conversion records/results, pending requests, billing-account
-      mappings, reward tickets and reward limits. Cleanup retries hourly if interrupted.
+      wallet and balance, conversion records/results, AI-result reports and their
+      metadata, pending requests, billing-account mappings, reward tickets and
+      reward limits. Cleanup retries hourly if interrupted.
       Signing in to Google afterward cannot recover the deleted wallet; a new account can
       receive only its own new guest allowance. Your Google account itself stays intact.
     </p>
@@ -98,8 +106,8 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
       Support emails and attachments are handled separately. Say if you want those removed
       too; support removes matching correspondence after ownership verification and reports
       any specific retention exception. Email-provider backups and Google-managed transaction
-      history are outside the app's account cleanup. Support replies with completion status;
-      no fixed completion time for manual requests is promised.
+      history are outside the app's account cleanup. We provide a completion status
+      when the manual request is finished; there is no guaranteed response time.
     </p>
   </section>
   <section aria-labelledby="device-title">
@@ -152,6 +160,6 @@ const deletionEmail = supportLink('Chat Like Gen Z account and data deletion');
       <strong>Legal developer / publisher:</strong> Sidhanshu Udawat<br />
       <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={deletionEmail}>{studio.email}</a>
     </p>
-    <p>Last updated: <time datetime="2026-10-06">6 October 2026</time>.</p>
+    <p>Last updated: <time datetime="2026-10-07">7 October 2026</time>.</p>
   </section>
 </AppLayout>
