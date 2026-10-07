@@ -129,10 +129,10 @@ const sections = [
     <h2 id="ads-title">4. Rewarded ads and privacy choices</h2>
     <p>
       The test build offers optional Google AdMob rewarded ads. A verified completed
-      ad is intended to add three conversions after our server checks Google’s signed
-      confirmation. The app also has demo ads that add no credits. Owned-unit ad
-      completion and the full consent flow have not yet been verified on the test phone;
-      live public ads are disabled.
+      ad adds three conversions after our server checks Google’s signed confirmation.
+      Owned-unit test-ad completion and duplicate-callback protection have been verified
+      on the internal-test phone. Demo ads add no credits. Live public ads remain disabled;
+      early-close and regional consent testing are still in progress.
     </p>
     <p>
       Google’s Mobile Ads SDK and User Messaging Platform (UMP) can process IP address,
@@ -142,7 +142,8 @@ const sections = [
       ads and applies under-age treatment to selected age groups. It does not request
       precise location. The app requests consent where required before loading ads
       and offers Settings → Ad privacy choices when a privacy-options form is required
-      and available. A Console consent message still needs configuration and testing.
+      and available. The European consent message is published for this app. Regional
+      consent, refusal and reopening of privacy choices still need phone verification.
       See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.
     </p>
   </section>
@@ -159,6 +160,14 @@ const sections = [
       AppCrazy Labs does not receive your full payment-card details. Google controls
       its own purchase history. No subscription, lifetime Pro or RevenueCat service
       is used for this app.
+    </p>
+    <p>
+      Background purchase recovery checks Google Play’s current purchase and refund
+      records before adjusting a wallet. Google Cloud Pub/Sub may temporarily retain
+      unacknowledged purchase notifications, including purchase tokens, for up to seven
+      days while delivery is retried. We do not copy those raw tokens into Firestore or
+      application logs. Our daily reconciliation also checks Google Play’s recent
+      refund records; repeated notifications cannot add or remove the same pack twice.
     </p>
   </section>
 
