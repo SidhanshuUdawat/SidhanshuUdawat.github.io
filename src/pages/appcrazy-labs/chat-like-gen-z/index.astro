@@ -21,10 +21,11 @@ const features = [
   deck={chatLikeGenZ.tagline}
   backLabel={studio.name}
   backHref={studio.path}
+  icon={chatLikeGenZ.icon}
 >
   <div slot="meta" class="hero-actions">
-    <a class="button button-primary" href="#features">Explore the app ↓</a>
-    <a class="text-link" href="#support">Get support →</a>
+    <a class="button button-primary" href={chatLikeGenZ.playUrl}>Get it on Google Play ↗</a>
+    <a class="text-link" href="#features">Explore the app ↓</a>
   </div>
 
   <p>
@@ -52,17 +53,12 @@ const features = [
       Failed or cancelled requests return the reserved conversion.
     </p>
     <p>
-      The Android test build includes optional rewarded ads intended to add three
-      conversions after server verification, and Google Play test purchases of 100,
-      200 or 300-conversion packs. Demo ads add no credits. These features are in
-      internal testing, not a public offer or live sale.
+      Optional rewarded ads add three conversions after a completed ad is verified
+      by the server. You can also buy one-time packs of 100, 200 or 300 conversions
+      through Google Play at the price shown for your region. Link your wallet with
+      Google before checkout so you can recover your balance later.
     </p>
   </section>
-
-  <aside class="note-callout" aria-label="Availability">
-    <strong>Currently in internal testing</strong>
-    <p>There is no public Google Play download link yet. We will add one when a public listing is available.</p>
-  </aside>
 
   <section aria-labelledby="privacy-title">
     <h2 id="privacy-title">What happens to your words</h2>

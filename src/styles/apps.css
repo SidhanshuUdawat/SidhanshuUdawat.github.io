@@ -12,11 +12,36 @@
   overflow-wrap: anywhere;
 }
 
+.app-hero-icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--line);
+  object-fit: cover;
+}
+
 .app-page .archive-item {
-  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
   align-items: start;
   gap: 1.25rem;
   font-family: var(--sans);
+}
+
+.app-directory-icon {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--line);
+  object-fit: cover;
+}
+
+.app-page .archive-item .app-availability {
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .app-page .archive-item h3 {
@@ -88,7 +113,7 @@
 
 @media (max-width: 760px) {
   .app-page .archive-item {
-    grid-template-columns: 1.5rem minmax(0, 1fr);
+    grid-template-columns: 3.5rem minmax(0, 1fr);
     gap: 0.75rem;
   }
 }

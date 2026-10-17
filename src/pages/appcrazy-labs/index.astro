@@ -30,12 +30,15 @@ import { apps, appPath, studio } from '../../data/apps';
     <div class="archive-list">
       {apps.map((app, index) => (
         <a class="archive-item" href={appPath(app)}>
-          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          {app.icon
+            ? <img class="app-directory-icon" src={app.icon} width="56" height="56" alt="" loading="lazy" decoding="async" />
+            : <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>}
           <div>
             <p class="writing-type">{app.category}</p>
             <h3>{app.name}</h3>
             <p>{app.tagline}</p>
             <p>{app.description}</p>
+            {app.playUrl && <p class="app-availability">Available on Google Play</p>}
             <span class="text-link">Explore {app.name} →</span>
           </div>
           <span aria-hidden="true">↗</span>

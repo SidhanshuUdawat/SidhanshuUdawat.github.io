@@ -12,9 +12,10 @@ interface Props {
   backLabel: string;
   backHref: string;
   deck?: string;
+  icon?: string;
 }
 
-const { title, description, canonicalPath, heading, kicker, backLabel, backHref, deck } = Astro.props;
+const { title, description, canonicalPath, heading, kicker, backLabel, backHref, deck, icon } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
@@ -23,6 +24,7 @@ const { title, description, canonicalPath, heading, kicker, backLabel, backHref,
     <article>
       <header class="note-header">
         <p class="section-kicker">{kicker}</p>
+        {icon && <img class="app-hero-icon" src={icon} width="80" height="80" alt="" decoding="async" />}
         <h1>{heading}</h1>
         {deck && <p class="note-deck">{deck}</p>}
         <slot name="meta" />

@@ -13,6 +13,8 @@ export interface StudioApp {
   category: string;
   tagline: string;
   description: string;
+  icon?: string;
+  playUrl?: string;
 }
 
 export const uploadfit: StudioApp = {
@@ -21,6 +23,8 @@ export const uploadfit: StudioApp = {
   category: 'Image utility',
   tagline: 'Make your image meet exact upload requirements.',
   description: 'Resize, crop and compress images to the dimensions and file size you need. Preview the result, then save or share it. Image processing stays on your device.',
+  icon: '/images/apps/uploadfit.png',
+  playUrl: 'https://play.google.com/store/apps/details?id=com.appcrazylabs.uploadfit',
 };
 
 export const chatLikeGenZ: StudioApp = {
@@ -28,7 +32,9 @@ export const chatLikeGenZ: StudioApp = {
   name: 'Chat Like Gen Z',
   category: 'Writing utility',
   tagline: 'Say it in your own words, with a little more range.',
-  description: 'Turn ordinary text into three Gen Z-style options, or decode slang into plain language. Currently in Google Play internal testing.',
+  description: 'Turn ordinary text into three Gen Z-style options, or decode slang into plain language. Available on Google Play.',
+  icon: '/images/apps/chat-like-gen-z.png',
+  playUrl: 'https://play.google.com/store/apps/details?id=com.appcrazylabs.chatlikegenz',
 };
 
 export const idPhotoStudio: StudioApp = {
