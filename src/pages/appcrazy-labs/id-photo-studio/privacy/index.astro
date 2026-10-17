@@ -1,0 +1,209 @@
+---
+import AppLayout from '../../../../layouts/AppLayout.astro';
+import { idPhotoStudio, appPath, studio, supportLink } from '../../../../data/apps';
+
+const path = appPath(idPhotoStudio);
+const sections = [
+  ['photos', 'Photos and device access'],
+  ['projects', 'Projects, exports and sharing'],
+  ['ads', 'Optional rewarded ads'],
+  ['purchases', 'Lifetime Pro purchases'],
+  ['support', 'Support messages'],
+  ['choices', 'Your choices and rights'],
+  ['retention', 'Retention and deletion'],
+  ['security', 'Security and processing locations'],
+  ['children', 'Children’s privacy'],
+  ['contact', 'Changes and contact'],
+];
+---
+
+<AppLayout
+  title="ID Photo Studio Privacy Policy | AppCrazy Labs"
+  description="How ID Photo Studio handles local photos and projects, saved exports, optional AdMob ads, Google Play and RevenueCat purchases, support and deletion requests."
+  canonicalPath={`${path}privacy/`}
+  heading="ID Photo Studio privacy policy"
+  kicker="AppCrazy Labs · Privacy"
+  backLabel={idPhotoStudio.name}
+  backHref={path}
+>
+  <div slot="meta" class="note-meta">
+    <span>Effective: <time datetime="2026-10-17">17 October 2026</time></span>
+    <span>Last updated: <time datetime="2026-10-17">17 October 2026</time></span>
+  </div>
+
+  <p class="archive-disclaimer">
+    <strong>Legal developer / publisher:</strong> Sidhanshu Udawat<br />
+    <strong>Privacy contact:</strong> Sidhanshu Udawat - <a href={`mailto:${studio.email}`}>{studio.email}</a>
+  </p>
+  <p>
+    This policy explains how ID Photo Studio, an Android app from AppCrazy Labs, handles
+    information when you prepare a photo, use optional ads or purchases, or contact us.
+    In this policy, “we” means Sidhanshu Udawat, the app’s developer. The app is currently
+    in Google Play internal testing; availability depends on the Play track and region.
+  </p>
+  <aside class="note-callout" aria-label="Privacy summary">
+    <strong>The short version</strong>
+    <p>
+      Photos, projects, edits and generated files are processed and kept on your device.
+      The app does not upload them to AppCrazy Labs servers. That does not mean nothing
+      leaves your device: Google AdMob, Google Play and RevenueCat process information
+      for optional ads and purchases, and we receive what you choose to send to support.
+    </p>
+  </aside>
+
+  <nav class="policy-contents" aria-label="Privacy policy contents">
+    <strong>In this policy</strong>
+    <ol>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ol>
+  </nav>
+
+  <section id="photos" aria-labelledby="photos-title">
+    <h2 id="photos-title">1. Photos and device access</h2>
+    <p>
+      You can take a photo with the camera or choose one through your device’s photo
+      picker. The app asks for camera access when you use the camera. You can manage
+      camera permission in Android settings. The photo picker gives the app access to
+      the photo you select; it does not require access to your entire gallery.
+    </p>
+    <p>
+      The app keeps a local original and a separate working copy while you frame,
+      crop or optionally edit the background. It also keeps local previews and generated
+      results for your project. These operations run on the device. We do not upload
+      photo contents to AppCrazy Labs servers or send them to AdMob or RevenueCat.
+      Do not assume that a photo’s metadata has been stripped from every copy or export.
+    </p>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">2. Projects, exports and sharing</h2>
+    <p>
+      Projects, including format choices, edits and local export history, are saved in
+      app storage on your device. You can export an individual JPEG or PNG photo or a
+      PDF or JPEG print sheet. The app creates the result locally. You choose whether
+      to save it to a folder or share it.
+    </p>
+    <p>
+      Saving creates a separate copy in the folder you select. Sharing sends a copy
+      through Android’s share flow to the app or person you choose; the receiving app’s
+      privacy practices then apply. Deleting a project does not delete copies already
+      saved outside app storage, shared with others or included in a device backup.
+    </p>
+  </section>
+
+  <section id="ads" aria-labelledby="ads-title">
+    <h2 id="ads-title">3. Optional rewarded ads</h2>
+    <p>
+      You may choose to watch a rewarded ad to unlock one additional individual-photo
+      export. Ads are provided by Google AdMob. The app checks applicable consent choices
+      before requesting an ad and provides an ad privacy-options entry point when Google’s
+      consent tools require it. You can also use Android’s advertising controls. We have
+      not verified every regional consent configuration.
+    </p>
+    <p>
+      Even for a non-personalised ad request, Google’s ads service may process an IP
+      address, device or advertising identifiers, app and ad interactions, diagnostic
+      information, and an approximate location inferred from IP. Google and its partners
+      use this information for ad delivery, measurement, security and fraud prevention;
+      processing depends on your settings, location and consent. The ad service does not
+      receive your photos from the app. See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>
+      {' '}and <a href="https://policies.google.com/technologies/partner-sites">Google’s explanation of data from partner apps</a>.
+    </p>
+  </section>
+
+  <section id="purchases" aria-labelledby="purchases-title">
+    <h2 id="purchases-title">4. Lifetime Pro purchases</h2>
+    <p>
+      Lifetime Pro is an optional one-time purchase processed by Google Play. RevenueCat
+      checks the purchase and manages Pro entitlements and eligible restores. ID Photo
+      Studio does not ask you to create a user account, but RevenueCat assigns an
+      anonymous technical app user identifier for its customer record.
+    </p>
+    <p>
+      Google Play and RevenueCat process purchase-related information such as product
+      and transaction identifiers, purchase tokens or receipts, status and entitlement
+      history. App, device, locale or currency context may accompany those requests.
+      We and RevenueCat do not receive your full payment card details from Google Play.
+      RevenueCat does not receive your photos. Read <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a>
+      {' '}and <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section id="support" aria-labelledby="support-title">
+    <h2 id="support-title">5. Support messages</h2>
+    <p>
+      If you email us, we receive your email address, message and anything you attach.
+      We and our email provider use that information to reply and investigate the issue.
+      Sending a photo to support is your choice and is separate from normal local photo
+      processing. Please avoid sending sensitive photos, identity documents or payment
+      card details.
+    </p>
+  </section>
+
+  <section id="choices" aria-labelledby="choices-title">
+    <h2 id="choices-title">6. Your choices and rights</h2>
+    <p>
+      You choose which photos to import or take, which results to save or share, whether
+      to watch an ad and whether to buy Pro. You can manage camera permission, app storage
+      and available ad identifiers through Android. The app’s ad privacy-options entry
+      point lets you revisit choices when those options are required and available.
+    </p>
+    <p>
+      Depending on where you live, you may have rights to access, correct or delete
+      personal information held by us, request a copy, object to or restrict processing,
+      or withdraw consent. Contact <a href={supportLink('ID Photo Studio privacy request')}>{studio.email}</a>
+      {' '}with a request. We may ask for limited information to locate or verify a record.
+      We cannot access photos stored only on your device. You may also contact your local
+      data protection authority where that right applies.
+    </p>
+  </section>
+
+  <section id="retention" aria-labelledby="retention-title">
+    <h2 id="retention-title">7. Retention and deletion</h2>
+    <ul>
+      <li><strong>Local projects and files:</strong> remain on your device until you delete a project, clear app storage or uninstall. Deleting a project removes its app-managed files when they are not needed by another project. The app also offers cleanup for unused local files. Separately saved exports, shared copies and backups must be deleted where they are stored.</li>
+      <li><strong>Free exports and ad rewards:</strong> the app keeps their credit state locally. Clearing app data or reinstalling can reset that state.</li>
+      <li><strong>Purchases:</strong> RevenueCat and Google retain purchase and entitlement data as needed for access, restoration, security, disputes and applicable legal duties. Uninstalling does not erase those records.</li>
+      <li><strong>Ads:</strong> Google and its partners retain ad-related data under their own policies and controls.</li>
+      <li><strong>Support:</strong> we keep correspondence for the request and necessary follow-up, or longer where a dispute or legal duty requires it.</li>
+    </ul>
+    <p>
+      These categories do not all have one fixed retention period. For data we control,
+      we can explain the relevant duration or criteria when you ask. Deleting a
+      RevenueCat record may affect purchase recognition or restoration and does not
+      delete Google Play’s transaction history or issue a refund. See the{' '}
+      <a href={`${path}data-deletion/`}>ID Photo Studio data-deletion instructions →</a>
+    </p>
+  </section>
+
+  <section id="security" aria-labelledby="security-title">
+    <h2 id="security-title">8. Security and processing locations</h2>
+    <p>
+      Keeping photos on the device limits who receives their contents, but the safety of
+      files saved or shared elsewhere depends on that destination and your device settings.
+      AdMob, RevenueCat, Google Play and our email provider may process their information
+      in other countries, including the United States. Their policies explain their
+      safeguards. No storage or transmission method is completely secure.
+    </p>
+  </section>
+
+  <section id="children" aria-labelledby="children-title">
+    <h2 id="children-title">9. Children’s privacy</h2>
+    <p>
+      ID Photo Studio is a general-purpose document-photo tool, not an app specifically
+      directed at children under 13. A parent or guardian may prepare a child’s photo
+      locally, but should review any use of sharing, ads or purchases. We do not knowingly
+      collect a child’s information through support; if you believe one was sent to us,
+      contact us so we can review and delete it where appropriate.
+    </p>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">10. Changes and contact</h2>
+    <p>
+      We may update this policy when the app or its services change. We will publish the
+      revised policy here with a new date and provide further notice or consent where
+      required. For privacy, support or deletion questions, email{' '}
+      <a href={supportLink('ID Photo Studio privacy enquiry')}>{studio.email}</a>.
+      You can also use the <a href="/#contact">website contact section</a>.
+    </p>
+  </section>
+</AppLayout>

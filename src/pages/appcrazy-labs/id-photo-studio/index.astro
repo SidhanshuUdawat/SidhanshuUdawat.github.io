@@ -1,0 +1,82 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+import AppSupport from '../../../components/AppSupport.astro';
+import { idPhotoStudio, appPath, studio } from '../../../data/apps';
+
+const path = appPath(idPhotoStudio);
+const features = [
+  ['Start with a format', 'Choose a document format with recorded source information, or set your own photo dimensions. Always check the issuing authority’s latest rules.'],
+  ['Use your photo', 'Take a photo or choose one from your gallery. The original stays in the local project while you work from a separate copy.'],
+  ['Frame and refine', 'Position and crop the photo with guides. If the rules allow it, edit a plain background and inspect the edges before exporting.'],
+  ['Review before export', 'Check the measured output, image quality and any format-specific warnings. You make the final call.'],
+  ['Choose the result', 'Create a JPEG or PNG individual photo, or a PDF or JPEG print sheet. Save a copy or share it when you choose.'],
+];
+---
+
+<AppLayout
+  title="ID Photo Studio | Passport, visa and ID photos | AppCrazy Labs"
+  description="Prepare passport, visa and ID photos with sourced formats or custom dimensions. Frame, optionally edit the background, and export JPEG, PNG or print sheets on Android."
+  canonicalPath={path}
+  heading={idPhotoStudio.name}
+  kicker="AppCrazy Labs · Photo utility"
+  deck={idPhotoStudio.tagline}
+  backLabel={studio.name}
+  backHref={studio.path}
+>
+  <div slot="meta" class="hero-actions">
+    <a class="button button-primary" href="#features">Explore the features ↓</a>
+    <a class="text-link" href="#support">Get support →</a>
+  </div>
+
+  <p>
+    An ID photo can look right and still be the wrong size. ID Photo Studio helps
+    you work through the format, framing and output, whether you need a file for
+    an online form or a sheet to print.
+  </p>
+
+  <section id="features" aria-labelledby="features-title">
+    <h2 id="features-title">From photo to finished file</h2>
+    <dl class="app-features">
+      {features.map(([name, description]) => (
+        <div><dt>{name}</dt><dd>{description}</dd></div>
+      ))}
+    </dl>
+    <p>
+      ID Photo Studio does not guarantee acceptance by a passport, visa or ID
+      issuing authority. Requirements can change, and some authorities do not
+      allow edited backgrounds or home-printed photos. Check the current rules
+      and inspect your final photo before submitting it.
+    </p>
+  </section>
+
+  <section aria-labelledby="access-title">
+    <h2 id="access-title">Start free, choose when to upgrade</h2>
+    <p>
+      You can create three individual photos for free. An optional completed
+      rewarded ad adds one more individual photo. Lifetime Pro is a one-time
+      Google Play purchase that unlocks unlimited individual photos and print
+      sheets. A print sheet requires Pro, but you can set it up and preview it first.
+    </p>
+  </section>
+
+  <aside class="note-callout" aria-label="Availability">
+    <strong>Currently in internal testing</strong>
+    <p>ID Photo Studio is not publicly available on Google Play yet. A public download link will be added when there is a public listing.</p>
+  </aside>
+
+  <section aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Your photos stay with you</h2>
+    <p>
+      Photos, drafts, edits and generated files are processed and stored on your
+      device, not uploaded to AppCrazy Labs servers. Saving and sharing are your
+      choices. AdMob and RevenueCat still process advertising and purchase data;
+      local photo processing does not mean that no other information leaves the device.
+    </p>
+    <p>
+      <a href={`${path}privacy/`}>Read the ID Photo Studio privacy policy →</a>
+      {' '}You can also <a href={`${path}data-deletion/`}>see how to delete your data →</a>
+    </p>
+  </section>
+
+  <AppSupport appName={idPhotoStudio.name} />
+</AppLayout>

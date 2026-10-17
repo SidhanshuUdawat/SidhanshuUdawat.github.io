@@ -31,7 +31,15 @@ export const chatLikeGenZ: StudioApp = {
   description: 'Turn ordinary text into three Gen Z-style options, or decode slang into plain language. Currently in Google Play internal testing.',
 };
 
-export const apps: readonly StudioApp[] = [uploadfit, chatLikeGenZ];
+export const idPhotoStudio: StudioApp = {
+  slug: 'id-photo-studio',
+  name: 'ID Photo Studio',
+  category: 'Photo utility',
+  tagline: 'Prepare an ID photo with the requirements in view.',
+  description: 'Frame passport, visa and ID photos for a sourced document format or custom size, then export a digital photo or print sheet. Currently in Google Play internal testing.',
+};
+
+export const apps: readonly StudioApp[] = [uploadfit, chatLikeGenZ, idPhotoStudio];
 
 export const appPath = (app: StudioApp) => `${studio.path}${app.slug}/`;
 export const supportLink = (subject: string) =>
